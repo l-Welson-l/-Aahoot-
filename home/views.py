@@ -15,7 +15,9 @@ class home(ListView):
 
 class UserLogin (LoginView):
     template_name = 'home/login.html'
-    success_url = reverse_lazy('home')
+    def get_success_url(self):
+        return reverse_lazy('home')
+
 
 class RegisterPage(FormView):
     template_name = 'home/register.html'

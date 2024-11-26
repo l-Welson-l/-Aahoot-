@@ -2,4 +2,13 @@
 
 <h>Quizes</h>
 
-
+{% if user.is_authenticated %}
+<li>
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+</li>
+{% else %}
+<li><a href="{% url 'login' %}">Login</a></li>
+{% endif %}
