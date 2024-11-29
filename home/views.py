@@ -4,6 +4,7 @@ from django.contrib.auth.views import LoginView
 from django.contrib.auth import login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import FormView, UpdateView, CreateView, DeleteView
+from django.views.generic import DetailView
 from django.views.generic import View 
 from django.urls import reverse_lazy
 from .models import Quiz, Answer, CorrectAnswer, UserAnswer
@@ -43,3 +44,8 @@ class CreateQuestion(CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
+
+class QuestionView(DetailView):
+    model = Quiz
+    template_name = 'home/question_detail.html'
+    context_object_name = 'quiz'

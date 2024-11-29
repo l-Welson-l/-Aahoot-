@@ -11,7 +11,7 @@
 <a href="{% url 'login' %}">Login</a>
 {% endif %}
 
-{% for Quiz in home %}
-    <a>{{Quiz.question}}</a>
-    
+{% for quiz in home %}
+    <a href="{% url 'question' quiz.pk %}">{{quiz.question}}</a>
+
 {% endfor %}
