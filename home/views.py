@@ -33,3 +33,13 @@ class UserLogout(View):
     def post(self, request, *args, **kwargs):
         logout(request)
         return redirect('home')
+
+class CreateQuestion(CreateView):
+    model = Quiz
+    template_name = 'home/question_create.html'
+    fields = ['question']
+    success_url = reverse_lazy('home')
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)

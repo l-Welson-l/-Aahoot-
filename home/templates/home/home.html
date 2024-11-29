@@ -10,3 +10,8 @@
 {% else %}
 <a href="{% url 'login' %}">Login</a>
 {% endif %}
+
+{% for Quiz in home %}
+    <a>{{Quiz.question}}</a>
+    
+{% endfor %}
