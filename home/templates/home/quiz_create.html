@@ -1,0 +1,11 @@
+
+{% if user.is_authenticated %}
+    <h1>Create a question</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Submit">
+    </form>
+{% else %}
+<a>You need to be logged in to create a quiz --<a href="{% url 'login' %}">Login</a></a>
+{% endif %}

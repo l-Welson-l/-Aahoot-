@@ -3,11 +3,12 @@ from django.views.generic import ListView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login, logout
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import FormView, UpdateView, CreateView, DeleteView
 from django.views.generic import DetailView
 from django.views.generic import View 
 from django.urls import reverse_lazy
-from .models import Quiz, Answer, CorrectAnswer, UserAnswer
+from .models import Quiz, Answer, UserAnswer
 
 class home(ListView):
     template_name = 'home/home.html'
@@ -35,17 +36,26 @@ class UserLogout(View):
         logout(request)
         return redirect('home')
 
-class CreateQuestion(CreateView):
+
+class CreateQuiz(CreateView):
     model = Quiz
-    template_name = 'home/question_create.html'
-    fields = ['question']
+    template_name = 'home/quiz_create.html'
+    fields = ['title', 'description']
     success_url = reverse_lazy('home')
 
     def form_valid(self, form):
-        form.instance.user = self.request.user
-        return super().form_valid(form)
+        if self.request.user.is_authenticated:
+            form.instance.user = self.request.user
+            return super().form_valid(form)
+        else:
+            return redirect('login')
 
-class QuestionView(DetailView):
+class QuizView(DetailView):
     model = Quiz
-    template_name = 'home/question_detail.html'
+    template_name = 'home/quiz_detail.html'
     context_object_name = 'quiz'
+
+class QuizDelete(DeleteView):
+    model = Quiz
+    template_name = 'home/question_delete.html'
+    success_url = reverse_lazy('home')
