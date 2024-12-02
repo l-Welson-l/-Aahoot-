@@ -1,3 +1,6 @@
 
 
 <h1>{{quiz.title}}</h1>
+<p>{{quiz.description}}</p>
+
+<a href="{% url 'delete_quiz' quiz.id %}"><button>Delete</button></a>

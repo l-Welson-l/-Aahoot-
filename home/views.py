@@ -57,5 +57,5 @@ class QuizView(DetailView):
 
 class QuizDelete(DeleteView):
     model = Quiz
-    template_name = 'home/question_delete.html'
+    template_name = 'home/quiz_delete.html'
     success_url = reverse_lazy('home')
