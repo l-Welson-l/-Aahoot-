@@ -12,6 +12,8 @@
 {% endif %}
 
 {% for quiz in home %}
+<li>
     <a href="{% url 'question' quiz.pk %}">{{quiz.question}}</a>
-
+</li>
 {% endfor %}
+
