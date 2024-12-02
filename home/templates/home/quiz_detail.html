@@ -2,5 +2,15 @@
 
 <h1>{{quiz.title}}</h1>
 <p>{{quiz.description}}</p>
+<ul>
+    {% for question in quiz.questions.all %}
+        <li>
+            {{question.text}}
+        </li>
+    {% endfor %}
+</ul>
 
-<a href="{% url 'delete_quiz' quiz.id %}"><button>Delete</button></a>
+{% if user.is_authenticated and quiz.user == user %}
+    <a href="{% url 'create_question' quiz.id %}">Add a Question</a>
+    <a href="{% url 'delete_quiz' quiz.id %}"><button>Delete</button></a>
+{% endif %}

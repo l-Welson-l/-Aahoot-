@@ -1,3 +1,4 @@
+from django.db.models.query import QuerySet
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
 from django.contrib.auth.views import LoginView
@@ -7,8 +8,9 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import FormView, UpdateView, CreateView, DeleteView
 from django.views.generic import DetailView
 from django.views.generic import View 
-from django.urls import reverse_lazy
-from .models import Quiz, Answer, UserAnswer
+from django.urls import reverse_lazy, reverse
+from .models import Quiz, Answer, UserAnswer, Question
+from .forms import QuizForm, QuestionForm, AnswerForm
 
 class home(ListView):
     template_name = 'home/home.html'
@@ -18,8 +20,8 @@ class home(ListView):
 class UserLogin (LoginView):
     template_name = 'home/login.html'
     def get_success_url(self):
-        return reverse_lazy('home')
-
+        next_url = self.request.GET.get('next', reverse_lazy('home'))
+        return next_url
 
 class RegisterPage(FormView):
     template_name = 'home/register.html'
@@ -40,7 +42,7 @@ class UserLogout(View):
 class CreateQuiz(CreateView):
     model = Quiz
     template_name = 'home/quiz_create.html'
-    fields = ['title', 'description']
+    form_class = QuizForm
     success_url = reverse_lazy('home')
 
     def form_valid(self, form):
@@ -59,3 +61,16 @@ class QuizDelete(DeleteView):
     model = Quiz
     template_name = 'home/quiz_delete.html'
     success_url = reverse_lazy('home')
+    def get_queryset(self):
+        return Quiz.objects.filter(user=self.request.user)
+
+class QuestionCreate(CreateView):
+    model = Question
+    template_name = 'home/question_create.html'
+    form_class = QuestionForm
+    def form_valid(self, form):
+        form.instance.quiz_id = self.kwargs['quiz_id']
+        return super().form_valid(form)
+    def get_success_url(self):
+        return reverse('quiz', kwargs={'pk': self.kwargs['quiz_id']})
+    
