@@ -7,6 +7,7 @@
     {% for question in quiz.questions.all %}
         <li>
             {{question.text}}
+            {{answer.text}}z
             {% if user.is_authenticated and quiz.user == user %}
                 <form method="post" action="{% url 'delete_question' question.id %}">
                     {% csrf_token %}

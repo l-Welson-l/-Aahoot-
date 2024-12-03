@@ -1,7 +1,16 @@
-
+<h1>Question for {{quiz.title}}</h1>
 
 <form method="post">
     {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Submit">
+    {{ form.as_p }}
+    
+    <h3>Answers</h3>
+    {{ answer_formset.management_form }}
+    <ul>
+        {% for answer_form in answer_formset %}
+            <li>{{ answer_form.as_p }}</li>
+        {% endfor %}
+    </ul>
+
+    <button type="submit">Submit Question & Answer</button>
 </form>

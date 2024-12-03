@@ -1,4 +1,5 @@
 from django.db.models.query import QuerySet
+from django.forms import inlineformset_factory
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
 from django.contrib.auth.views import LoginView
@@ -10,7 +11,7 @@ from django.views.generic import DetailView
 from django.views.generic import View 
 from django.urls import reverse_lazy, reverse
 from .models import Quiz, Answer, UserAnswer, Question
-from .forms import QuizForm, QuestionForm, AnswerForm
+from .forms import QuizForm, QuestionForm, AnswerForm, AnswerFormSet
 
 class home(ListView):
     template_name = 'home/home.html'
@@ -68,9 +69,27 @@ class QuestionCreate(CreateView):
     model = Question
     template_name = 'home/question_create.html'
     form_class = QuestionForm
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        AnswerFormSet = inlineformset_factory(Question, Answer, form=AnswerForm, extra=3)
+        context['answer_formset'] = AnswerFormSet(self.request.POST or None)
+        return context
+    def form_valid(self, form):
+        context = self.get_context_data()
+        answer_formset = context['answer_formset']
+        form.instance.quiz_id = self.kwargs['quiz_id']
+        if answer_formset.is_valid():
+            response = super().form_valid(form)
+            answer_formset.instance = self.object  # Set the Question instance
+            answer_formset.save()
+            return response
+        else:
+            return self.form_invalid(form)
+    
     def form_valid(self, form):
         form.instance.quiz_id = self.kwargs['quiz_id']
         return super().form_valid(form)
+    
     def get_success_url(self):
         return reverse('quiz', kwargs={'pk': self.kwargs['quiz_id']})
 
@@ -87,3 +106,13 @@ class QuizUpdate(UpdateView):
     def get_success_url(self):
         quiz = self.get_object()
         return reverse('quiz', kwargs={'pk': quiz.id})
+    
+# class AnswerCreate(CreateView):
+#     model = Answer
+#     form_class = AnswerForm
+#     def form_valid(self, form):
+#         form.instance.question = Question.objects.get(pk=self.kwargs['quiz_id'])
+#         return super().form_valid(form)
+#     def get_success_url(self):
+#         return reverse('create_question', kwargs={'quiz_id': self.kwargs['quiz_id']})
+    
