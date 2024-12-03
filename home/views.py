@@ -73,4 +73,9 @@ class QuestionCreate(CreateView):
         return super().form_valid(form)
     def get_success_url(self):
         return reverse('quiz', kwargs={'pk': self.kwargs['quiz_id']})
-    
+
+class QuestionDelete(DeleteView):
+    model = Question
+    def get_success_url(self):
+        question = self.get_object()
+        return reverse('quiz', kwargs={'pk': question.quiz.id})
