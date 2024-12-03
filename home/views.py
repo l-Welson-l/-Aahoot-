@@ -79,3 +79,11 @@ class QuestionDelete(DeleteView):
     def get_success_url(self):
         question = self.get_object()
         return reverse('quiz', kwargs={'pk': question.quiz.id})
+
+class QuizUpdate(UpdateView):
+    model = Quiz
+    template_name = 'home/quiz_update.html'
+    form_class = QuizForm
+    def get_success_url(self):
+        quiz = self.get_object()
+        return reverse('quiz', kwargs={'pk': quiz.id})

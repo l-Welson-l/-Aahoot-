@@ -1,7 +1,8 @@
 
 
-<h1>{{quiz.title}}</h1>
+<h1>{{quiz.title}}</h1>  
 <p>{{quiz.description}}</p>
+{% if user.is_authenticated and quiz.user == user %} <a href="{% url 'update_quiz' quiz.id %}"><button>Edit</button></a> {% endif %}
 <ul>
     {% for question in quiz.questions.all %}
         <li>
