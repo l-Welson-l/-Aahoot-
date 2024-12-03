@@ -3,6 +3,7 @@
 <h>Quizes</h>
 
 {% if user.is_authenticated %}
+    <small>Logged in as @{{user}}</small>
     <form method="post" action="{% url 'logout' %}">
         {% csrf_token %}
         <button type="submit">Logout</button>
@@ -15,6 +16,7 @@
 {% for quiz in home %}
 <li>
     <a href="{% url 'quiz' quiz.pk %}">{{quiz.title}}</a>
+    <small>@{{quiz.user}}</small>
 </li>
 {% endfor %}
 
