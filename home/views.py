@@ -1,5 +1,5 @@
 from django.db.models.query import QuerySet
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login, logout
@@ -87,3 +87,14 @@ class QuizUpdate(UpdateView):
     def get_success_url(self):
         quiz = self.get_object()
         return reverse('quiz', kwargs={'pk': quiz.id})
+
+class AnswerCreate(CreateView):
+    model = Answer
+    template_name = 'home/answer_create.html'
+    form_class = AnswerForm
+    def form_valid(self, form):
+        question = get_object_or_404(Question, pk=self.kwargs['pk'])
+        form.instance.question = question
+        return super().form_valid(form)
+    def get_success_url(self):
+        return reverse('quiz', kwargs={'pk': self.object.question.quiz.id})

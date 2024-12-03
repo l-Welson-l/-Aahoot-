@@ -7,7 +7,13 @@
     {% for question in quiz.questions.all %}
         <li>
             {{question.text}}
+            {% for answer in question.answers.all %}
+                <ul>
+                    <li>{{answer.text}} {% if user.is_authenticated and quiz.user == user %} {{answer.is_correct}} {% endif %}</li>
+                </ul>
+            {% endfor %}
             {% if user.is_authenticated and quiz.user == user %}
+                <a href="{% url 'create_answer' question.id %}">Create a Answer</a>
                 <form method="post" action="{% url 'delete_question' question.id %}">
                     {% csrf_token %}
                     <button type="submit" value="delete">Remove</button>
