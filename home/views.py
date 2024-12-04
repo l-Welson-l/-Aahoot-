@@ -98,3 +98,30 @@ class AnswerCreate(CreateView):
         return super().form_valid(form)
     def get_success_url(self):
         return reverse('quiz', kwargs={'pk': self.object.question.quiz.id})
+    
+class QuizPlayView(DetailView):
+    model = Quiz
+    template_name = 'home/quiz_play.html'
+    context_object_name = 'quiz'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        quiz = context['quiz']
+        questions = quiz.questions.all()
+        context['questions'] = questions
+        return context
+    def post(self, request, *args, **kwargs):
+        quiz = self.get_object()
+        user = request.user
+        answers = request.POST
+        for question_id, selected_answer_id in answers.items():
+            if question_id.startswith('question_'):
+                question = Question.objects.get(id=question-id.split('_')[1])
+                selected_answer = Answer.objects.get(id=selected_answer_id)
+
+                UserAnswer.objects.update_or_create(
+                    user=user,
+                    question=question,
+                    selected_answer=selected_answer,
+                    defaults={'selected_answer': selected_answer}
+                )
+        return redirect('quiz_results', pk=quiz.id)
