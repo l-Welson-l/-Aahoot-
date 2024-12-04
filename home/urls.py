@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import UserLogin, home, RegisterPage, UserLogout, CreateQuiz, QuizView, QuizDelete, QuestionCreate, QuestionDelete, QuizUpdate, AnswerCreate
+from .views import UserLogin, home, RegisterPage, UserLogout, CreateQuiz, QuizView, QuizDelete, QuestionCreate, QuestionDelete, QuizUpdate, AnswerCreate, QuizPlayView
 urlpatterns = [
     path('', home.as_view(), name="home" ),
     path('login/',UserLogin.as_view(), name="login" ),
@@ -13,4 +13,5 @@ urlpatterns = [
     path('delete-question/<int:pk>/', QuestionDelete.as_view(), name="delete_question"),
     path('quiz-update/<int:pk>/', QuizUpdate.as_view(), name="update_quiz"),
     path('<int:pk>/answer-create/', AnswerCreate.as_view(), name="create_answer"),
+    path('quiz/<int:pk>/play/', QuizPlayView.as_view(), name="quiz_play"),
 ]
