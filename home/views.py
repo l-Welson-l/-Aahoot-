@@ -1,4 +1,5 @@
 from django.db.models.query import QuerySet
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView
 from django.contrib.auth.views import LoginView
@@ -6,8 +7,7 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import FormView, UpdateView, CreateView, DeleteView
-from django.views.generic import DetailView
-from django.views.generic import View 
+from django.views.generic import DetailView, View, TemplateView
 from django.urls import reverse_lazy, reverse
 from .models import Quiz, Answer, UserAnswer, Question
 from .forms import QuizForm, QuestionForm, AnswerForm
@@ -52,10 +52,36 @@ class CreateQuiz(CreateView):
         else:
             return redirect('login')
 
+# class QuizView(DetailView):
+#     model = Quiz
+#     template_name = 'home/quiz_detail.html'
+#     context_object_name = 'quiz'
 class QuizView(DetailView):
     model = Quiz
     template_name = 'home/quiz_detail.html'
     context_object_name = 'quiz'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        quiz = self.get_object()
+        context['questions'] = quiz.questions.all()  
+        return context
+
+    def post(self, request, *args, **kwargs):
+        quiz = self.get_object()
+        questions = quiz.questions.all()
+
+        for question in questions:
+            selected_answer_id = request.POST.get(f'answer_{question.id}')
+            if selected_answer_id:
+                selected_answer = Answer.objects.get(id=selected_answer_id)
+                UserAnswer.objects.update_or_create(
+                    user=request.user,
+                    question=question,
+                    defaults={'selected_answer': selected_answer}
+                )
+        return HttpResponseRedirect(reverse('quiz_result', kwargs={'quiz_id': quiz.id}))
+    
 
 class QuizDelete(DeleteView):
     model = Quiz
@@ -103,25 +129,51 @@ class QuizPlayView(DetailView):
     model = Quiz
     template_name = 'home/quiz_play.html'
     context_object_name = 'quiz'
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         quiz = context['quiz']
         questions = quiz.questions.all()
         context['questions'] = questions
         return context
+
     def post(self, request, *args, **kwargs):
         quiz = self.get_object()
         user = request.user
         answers = request.POST
+        
         for question_id, selected_answer_id in answers.items():
             if question_id.startswith('question_'):
-                question = Question.objects.get(id=question-id.split('_')[1])
+                # Correcting the typo here: question_id instead of question-id
+                question = Question.objects.get(id=question_id.split('_')[1])
                 selected_answer = Answer.objects.get(id=selected_answer_id)
 
+                # Use update_or_create to handle both new and existing answers
                 UserAnswer.objects.update_or_create(
                     user=user,
                     question=question,
-                    selected_answer=selected_answer,
                     defaults={'selected_answer': selected_answer}
                 )
-        return redirect('quiz_results', pk=quiz.id)
+        
+        return redirect('quiz_results', quiz_id=quiz.id)
+
+
+class QuizResultView(TemplateView):
+    template_name = 'home/quiz_results.html'
+
+    def get(self, request, quiz_id):
+        quiz = Quiz.objects.get(id=quiz_id)
+        user_answers = UserAnswer.objects.filter(user=request.user, question__quiz=quiz)
+
+        # Calculate the score
+        correct_answers = user_answers.filter(selected_answer__is_correct=True).count()
+        total_questions = quiz.questions.count()
+
+        context = {
+            'quiz': quiz,
+            'correct_answers': correct_answers,
+            'total_questions': total_questions,
+            'score': f'{correct_answers}/{total_questions}',
+            'user_answers': user_answers,
+        }
+        return render(request, self.template_name, context)

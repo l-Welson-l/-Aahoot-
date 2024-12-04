@@ -1,17 +1,23 @@
 
 
-<h1>{{quiz.title}}</h1>
-<p>{{quiz.description}}</p>
-<form method="post">
+
+<h1>{{ quiz.title }}</h1>
+<p>{{ quiz.description }}</p>
+
+<form method="POST">
     {% csrf_token %}
+    
     {% for question in questions %}
-        <fieldset>
-            <legend>{{question.text}}</legend>
+        <div>
+            <p>{{ question.text }}</p>
             {% for answer in question.answers.all %}
-                <input type="radio" id="question_{{ question.id }}_answer_{{ answer.id }}" name="question_{{ question.id }}" value="{{ answer.id }}">
-                <label for="question_{{ question.id }}_answer_{{ answer.id }}">{{ answer.text }}</label><br>
+                <label>
+                    <input type="radio" name="question_{{ question.id }}" value="{{ answer.id }}">
+                    {{ answer.text }}
+                </label><br>
             {% endfor %}
-        </fieldset>
+        </div>
     {% endfor %}
-    <input type="submit" value="Submit">
+    
+    <button type="submit">Submit</button>
 </form>
