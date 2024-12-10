@@ -177,3 +177,7 @@ class QuizResultView(TemplateView):
             'user_answers': user_answers,
         }
         return render(request, self.template_name, context)
+
+# class UserAnswerDetail(DetailView):
+#     model = UserAnswer
+#     template_name = 'home/user_answer_detail.html'

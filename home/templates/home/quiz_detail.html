@@ -39,7 +39,14 @@
 
 {% if user.is_authenticated and quiz.user == user %}
     <a href="{% url 'create_question' quiz.id %}">Add a Question</a>
-    <a href="{% url 'delete_quiz' quiz.id %}"><button>Delete</button></a>
+    <!-- <a href="{% url 'delete_quiz' quiz.id %}"><button>Delete</button></a> -->
+
+    
+<form method="post" action="{% url 'delete_quiz' quiz.id %}"
+    onsubmit="return confirm('Are you sure you want to delete this quiz?')">
+    {% csrf_token %}
+    <button type="submit" value="delete">Delete</button>
+</form>
 {% endif %}
 
 <!-- <h1>{{quiz.title}}</h1>  
