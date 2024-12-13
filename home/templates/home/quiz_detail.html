@@ -9,7 +9,9 @@
     <a href="{% url 'update_quiz' quiz.id %}"><button>Edit</button></a>
 {% endif %}
 
-<a href="{% url 'quiz_play' pk=quiz.id %}"><button>Play</button></a>
+{% if user.is_authenticated %}
+    <a href="{% url 'quiz_play' pk=quiz.id %}"><button>Play</button></a>
+{% endif %}
 
 <ul>
     {% for question in quiz.questions.all %}
@@ -48,33 +50,3 @@
     <button type="submit" value="delete">Delete</button>
 </form>
 {% endif %}
-
-<!-- <h1>{{quiz.title}}</h1>  
-<p>{{quiz.description}}</p>
-{% if user.is_authenticated and quiz.user == user %} <a href="{% url 'update_quiz' quiz.id %}"><button>Edit</button></a> {% endif %}
-<a href="{% url 'quiz_play' quiz.id %}"><button>Play</button></a>
-<ul>
-    {% for question in quiz.questions.all %}
-        <li>
-            {{question.text}}
-            
-            {% for answer in question.answers.all %}
-                <ul>
-                    <li>{{answer.text}} {% if user.is_authenticated and quiz.user == user %} {{answer.is_correct}} {% endif %}</li>
-                </ul>
-            {% endfor %}
-            {% if user.is_authenticated and quiz.user == user %}
-                <a href="{% url 'create_answer' question.id %}">Create a Answer</a>
-                <form method="post" action="{% url 'delete_question' question.id %}">
-                    {% csrf_token %}
-                    <button type="submit" value="delete">Remove</button>
-                </form>
-            {% endif %}
-        </li>
-    {% endfor %}
-</ul>
-
-{% if user.is_authenticated and quiz.user == user %}
-    <a href="{% url 'create_question' quiz.id %}">Add a Question</a>
-    <a href="{% url 'delete_quiz' quiz.id %}"><button>Delete</button></a>
-{% endif %} -->

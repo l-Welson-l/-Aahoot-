@@ -142,13 +142,15 @@ class QuizPlayView(DetailView):
         user = request.user
         answers = request.POST
         
+        user_answers = UserAnswer.objects.filter(user=user, question__quiz=quiz)
+        if user_answers.count() == quiz.questions.count():
+            return redirect('quiz_results', quiz_id=quiz.id)
+        
         for question_id, selected_answer_id in answers.items():
             if question_id.startswith('question_'):
-                # Correcting the typo here: question_id instead of question-id
                 question = Question.objects.get(id=question_id.split('_')[1])
                 selected_answer = Answer.objects.get(id=selected_answer_id)
 
-                # Use update_or_create to handle both new and existing answers
                 UserAnswer.objects.update_or_create(
                     user=user,
                     question=question,
@@ -158,25 +160,64 @@ class QuizPlayView(DetailView):
         return redirect('quiz_results', quiz_id=quiz.id)
 
 
+# class QuizPlayView(DetailView):
+#     model = Quiz
+#     template_name = 'home/quiz_play.html'
+#     context_object_name = 'quiz'
+
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         quiz = context['quiz']
+#         questions = quiz.questions.all()
+#         context['questions'] = questions
+#         return context
+
+#     def post(self, request, *args, **kwargs):
+#         quiz = self.get_object()
+#         user = request.user
+#         answers = request.POST
+        
+
+#         user_answers = UserAnswer.objects.filter(user=user, question__quiz=quiz)
+#         if user_answers.count() == quiz.questions.count():
+#             return redirect('quiz_results', quiz_id=quiz.id)
+
+#         for question_id, selected_answer_id in answers.items():
+#             if question_id.startswith('question_'):
+#                 question = Question.objects.get(id=question_id.split('_')[1])
+#                 selected_answer = Answer.objects.get(id=selected_answer_id)
+
+#                 UserAnswer.objects.update_or_create(
+#                     user=user,
+#                     question=question,
+#                     defaults={'selected_answer': selected_answer}
+#                 )
+
+#         return redirect('quiz_results', quiz_id=quiz.id)
+
+
 class QuizResultView(TemplateView):
+    model = UserAnswer
     template_name = 'home/quiz_results.html'
 
     def get(self, request, quiz_id):
-        quiz = Quiz.objects.get(id=quiz_id)
-        user_answers = UserAnswer.objects.filter(user=request.user, question__quiz=quiz)
+        if request.user.is_authenticated:
+            quiz = Quiz.objects.get(id=quiz_id)
+            user_answers = UserAnswer.objects.filter(user=request.user, question__quiz=quiz)
 
-        # Calculate the score
-        correct_answers = user_answers.filter(selected_answer__is_correct=True).count()
-        total_questions = quiz.questions.count()
+            correct_answers = user_answers.filter(selected_answer__is_correct=True).count()
+            total_questions = quiz.questions.count()
 
-        context = {
-            'quiz': quiz,
-            'correct_answers': correct_answers,
-            'total_questions': total_questions,
-            'score': f'{correct_answers}/{total_questions}',
-            'user_answers': user_answers,
-        }
-        return render(request, self.template_name, context)
+            context = {
+                'quiz': quiz,
+                'correct_answers': correct_answers,
+                'total_questions': total_questions,
+                'score': f'{correct_answers}/{total_questions}',
+                'user_answers': user_answers,
+            }
+            
+            return render(request, self.template_name, context)
+        
 
 # class UserAnswerDetail(DetailView):
 #     model = UserAnswer
