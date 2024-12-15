@@ -248,26 +248,36 @@ class QuizPlayView(DetailView):
 
 
 class QuizResultView(TemplateView):
-    model = UserAnswer
     template_name = 'home/quiz_results.html'
 
-    def get(self, request, quiz_id):
-        if request.user.is_authenticated:
-            quiz = Quiz.objects.get(id=quiz_id)
-            user_answers = UserAnswer.objects.filter(user=request.user, question__quiz=quiz)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        quiz_id = kwargs['quiz_id']
+        user = self.request.user
 
-            correct_answers = user_answers.filter(selected_answer__is_correct=True).count()
-            total_questions = quiz.questions.count()
+        quiz = Quiz.objects.get(id=quiz_id)
+        user_answers = UserAnswer.objects.filter(user=user, question__quiz=quiz)
 
-            context = {
-                'quiz': quiz,
-                'correct_answers': correct_answers,
-                'total_questions': total_questions,
-                'score': f'{correct_answers}/{total_questions}',
-                'user_answers': user_answers,
-            }
+        results = []
+        for user_answer in user_answers:
+            question = user_answer.question
+            selected_answer = user_answer.selected_answer
+            correct_answer = question.answers.filter(is_correct=True).first()
             
-            return render(request, self.template_name, context)
+            results.append({
+                'question': question,
+                'selected_answer': selected_answer,
+                'correct_answer': correct_answer,
+                'is_correct': selected_answer == correct_answer
+            })
+
+        context['quiz'] = quiz
+        context['results'] = results
+        context['score'] = user_answers.filter(selected_answer__is_correct=True).count()
+        context['total_questions'] = quiz.questions.count()
+
+        return context
+
         
 
 # class UserAnswerDetail(DetailView):

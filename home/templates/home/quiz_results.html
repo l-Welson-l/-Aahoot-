@@ -1,6 +1,37 @@
 
 
-<h1>Your Score</h1>
-<p>You answered {{ score }} out of {{ total }} questions correctly!</p>
+<h1>Results for {{ quiz.title }}</h1>
+<p>Your Score: {{ score }}/{{ total_questions }}</p>
 
-
+<table>
+    <thead>
+        <tr>
+            <th>Question</th>
+            <th>Your Answer</th>
+            <th>Correct Answer</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for result in results %}
+        <tr>
+            <td>{{ result.question.text }}</td>
+            <td>
+                {% if result.selected_answer %}
+                    {{ result.selected_answer.text }}
+                {% else %}
+                    No answer selected
+                {% endif %}
+            </td>
+            <td>{{ result.correct_answer.text }}</td>
+            <td>
+                {% if result.is_correct %}
+                    <span style="color: green;">Correct</span>
+                {% else %}
+                    <span style="color: red;">Wrong</span>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
