@@ -11,6 +11,7 @@ from django.views.generic import DetailView, View, TemplateView
 from django.urls import reverse_lazy, reverse
 from .models import Quiz, Answer, UserAnswer, Question
 from .forms import QuizForm, QuestionForm, AnswerForm
+from django.forms import modelformset_factory
 
 class home(ListView):
     template_name = 'home/home.html'
@@ -137,14 +138,56 @@ class QuizDelete(DeleteView):
         return Quiz.objects.filter(user=self.request.user)
 
 class QuestionCreate(CreateView):
-    model = Question
     template_name = 'home/question_create.html'
-    form_class = QuestionForm
-    def form_valid(self, form):
-        form.instance.quiz_id = self.kwargs['quiz_id']
-        return super().form_valid(form)
-    def get_success_url(self):
-        return reverse('quiz', kwargs={'pk': self.kwargs['quiz_id']})
+    QuestionForm = QuestionForm
+    AnswerFormSet = modelformset_factory(Answer, fields=('text', 'is_correct'), extra=3)  # Adjust `extra` for default number of answers
+
+    def get(self, request, *args, **kwargs):
+        quiz_id = kwargs['quiz_id']
+        quiz = get_object_or_404(Quiz, id=quiz_id)
+        question_form = self.QuestionForm()
+        answer_formset = self.AnswerFormSet(queryset=Answer.objects.none())
+        return render(request, self.template_name, {
+            'quiz': quiz,
+            'question_form': question_form,
+            'answer_formset': answer_formset,
+        })
+
+    def post(self, request, *args, **kwargs):
+        quiz_id = kwargs['quiz_id']
+        quiz = get_object_or_404(Quiz, id=quiz_id)
+        question_form = self.QuestionForm(request.POST)
+        answer_formset = self.AnswerFormSet(request.POST)
+
+        if question_form.is_valid() and answer_formset.is_valid():
+            question = question_form.save(commit=False)
+            question.quiz = quiz
+            question.save()
+
+            for form in answer_formset:
+                if form.cleaned_data:  # Skip empty forms
+                    answer = form.save(commit=False)
+                    answer.question = question
+                    answer.save()
+
+            return redirect(reverse('quiz', kwargs={'pk': quiz.id}))
+
+        return render(request, self.template_name, {
+            'quiz': quiz,
+            'question_form': question_form,
+            'answer_formset': answer_formset,
+        })
+
+
+# class QuestionCreate(CreateView):
+#     model = Question
+#     template_name = 'home/question_create.html'
+#     form_class = QuestionForm
+#     def form_valid(self, form):
+#         form.instance.quiz_id = self.kwargs['quiz_id']
+#         return super().form_valid(form)
+#     def get_success_url(self):
+#         return reverse('quiz', kwargs={'pk': self.kwargs['quiz_id']})
 
 class QuestionDelete(DeleteView):
     model = Question
