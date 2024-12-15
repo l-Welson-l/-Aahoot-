@@ -52,10 +52,35 @@ class CreateQuiz(CreateView):
         else:
             return redirect('login')
 
+
 # class QuizView(DetailView):
 #     model = Quiz
 #     template_name = 'home/quiz_detail.html'
 #     context_object_name = 'quiz'
+
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         quiz = self.get_object()
+#         context['questions'] = quiz.questions.all()  
+#         return context
+
+#     def post(self, request, *args, **kwargs):
+#         quiz = self.get_object()
+#         questions = quiz.questions.all()
+
+#         for question in questions:
+#             selected_answer_id = request.POST.get(f'answer_{question.id}')
+#             if selected_answer_id:
+#                 selected_answer = Answer.objects.get(id=selected_answer_id)
+#                 UserAnswer.objects.update_or_create(
+#                     user=request.user,
+#                     question=question,
+#                     defaults={'selected_answer': selected_answer}
+#                 )
+#         return HttpResponseRedirect(reverse('quiz_result', kwargs={'quiz_id': quiz.id}))
+    
+from django.shortcuts import redirect
+
 class QuizView(DetailView):
     model = Quiz
     template_name = 'home/quiz_detail.html'
@@ -64,24 +89,45 @@ class QuizView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         quiz = self.get_object()
-        context['questions'] = quiz.questions.all()  
+        user = self.request.user
+
+        # Add questions to the context
+        context['questions'] = quiz.questions.all()
+
+        # Check if the user has answered all questions
+        if user.is_authenticated:
+            user_answers = UserAnswer.objects.filter(user=user, question__quiz=quiz)
+            context['answered_all'] = user_answers.count() == quiz.questions.count()
+        else:
+            context['answered_all'] = False
+
         return context
 
     def post(self, request, *args, **kwargs):
         quiz = self.get_object()
-        questions = quiz.questions.all()
+        user = self.request.user
 
-        for question in questions:
-            selected_answer_id = request.POST.get(f'answer_{question.id}')
-            if selected_answer_id:
+        # Handle form submission
+        answers = request.POST
+        for question_id, selected_answer_id in answers.items():
+            if question_id.startswith('answer_'):
+                question = Question.objects.get(id=question_id.split('_')[1])
                 selected_answer = Answer.objects.get(id=selected_answer_id)
+
+                # Save or update the user's answer
                 UserAnswer.objects.update_or_create(
-                    user=request.user,
+                    user=user,
                     question=question,
                     defaults={'selected_answer': selected_answer}
                 )
-        return HttpResponseRedirect(reverse('quiz_result', kwargs={'quiz_id': quiz.id}))
-    
+
+        # Redirect to results page after submission
+        return redirect('quiz_results', quiz.id)
+
+
+
+
+
 
 class QuizDelete(DeleteView):
     model = Quiz
@@ -133,19 +179,23 @@ class QuizPlayView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         quiz = context['quiz']
-        questions = quiz.questions.all()
-        context['questions'] = questions
+        user = self.request.user
+
+        # Add questions to the context
+        context['questions'] = quiz.questions.all()
+
+        # Check if the user has answered all questions
+        user_answers = UserAnswer.objects.filter(user=user, question__quiz=quiz)
+        context['answered_all'] = user_answers.count() == quiz.questions.count()
+
         return context
 
     def post(self, request, *args, **kwargs):
         quiz = self.get_object()
         user = request.user
         answers = request.POST
-        
-        user_answers = UserAnswer.objects.filter(user=user, question__quiz=quiz)
-        if user_answers.count() == quiz.questions.count():
-            return redirect('quiz_results', quiz_id=quiz.id)
-        
+
+        # Save or update the user's answers
         for question_id, selected_answer_id in answers.items():
             if question_id.startswith('question_'):
                 question = Question.objects.get(id=question_id.split('_')[1])
@@ -156,8 +206,9 @@ class QuizPlayView(DetailView):
                     question=question,
                     defaults={'selected_answer': selected_answer}
                 )
-        
-        return redirect('quiz_results', quiz_id=quiz.id)
+
+        # Redirect to the results page after submitting answers
+        return redirect('quiz_results', quiz.id)
 
 
 # class QuizPlayView(DetailView):
