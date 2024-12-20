@@ -1,20 +1,12 @@
 {% extends 'home/main.html' %}
-
 {% block content %}
+
+
     <h1>Quizzes</h1>
-
-    <!-- Search Form -->
-    <form method="get" action="{% url 'home' %}">
-        <input type="text" name="q" value="{{ search_query }}" placeholder="Search for quizzes..." />
-        <button type="submit">Search</button>
-    </form>
-
-    <!-- Sidebar Icon to Open/Close -->
     <div class="sidebar-toggle" onclick="toggleSidebar()">&#9776;</div>
 
-    <!-- Sidebar -->
     <div class="sidebar">
-        <h3>My Quizzes</h3>
+        <a href="{% url 'home' %}", style="color: antiquewhite;"><h3>Quizzes</h3></a>
         <details>
             <summary>Created Quizzes</summary>
             <ul>
@@ -41,6 +33,10 @@
         {% endif %}
 
         <a href="{% url 'create_quiz' %}"><button>Create a quiz</button></a>
+        <form method="get" action="{% url 'home' %}">
+            <input type="text" name="q" value="{{ search_query }}" placeholder="Search for quizzes..." />
+            <button type="submit">Search</button>
+        </form>
         <ul>
             {% for quiz in home %}
                 <li>

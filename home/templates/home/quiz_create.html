@@ -1,3 +1,6 @@
+{% extends 'home/main.html' %}
+{% block content %}
+
 
 {% if user.is_authenticated %}
     <h1>Create a question</h1>
@@ -9,3 +12,7 @@
 {% else %}
 <a>You need to be logged in to create a quiz --<a href="{% url 'login' %}">Login</a></a>
 {% endif %}
+
+
+
+{% endblock %}

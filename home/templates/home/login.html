@@ -1,3 +1,7 @@
+{% extends 'home/main.html' %}
+{% block content %}
+
+
 <a href="{% url 'home' %}">Home</a>
 
 <h>Login</h>
@@ -8,3 +12,6 @@
 </form>
 <a>Don't have a accout?? <a href="{% url 'register' %}">Register</a></a>
 
+
+
+{% endblock %}
