@@ -7,6 +7,7 @@ class Quiz(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="quizzes")
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True, null=True)
+    time_limit = models.PositiveIntegerField(null=True, blank=True, help_text="Time limit in minutes (leave blank for no time limit)")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     def __str__(self):
