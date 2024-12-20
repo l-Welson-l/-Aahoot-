@@ -4,8 +4,10 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login, logout
+from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
+from django.core.exceptions import PermissionDenied
 from django.views.generic.edit import FormView, UpdateView, CreateView, DeleteView
 from django.views.generic import DetailView, View, TemplateView
 from django.urls import reverse_lazy, reverse
@@ -326,3 +328,36 @@ class QuizResultView(TemplateView):
 # class UserAnswerDetail(DetailView):
 #     model = UserAnswer
 #     template_name = 'home/user_answer_detail.html'
+
+
+class QuizParticipantResultsView(DetailView):
+    model = Quiz
+    template_name = 'home/quiz_participant_results.html'
+    context_object_name = 'quiz'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        quiz = self.get_object()
+
+        if self.request.user != quiz.user:
+            raise PermissionDenied("You are not authorized to view this page.")
+
+        user_answers = UserAnswer.objects.filter(question__quiz=quiz)
+        participants = User.objects.filter(
+            useranswer__question__quiz=quiz
+        ).distinct()
+
+        participants_data = []
+        for participant in participants:
+            user_answers_for_quiz = user_answers.filter(user=participant)
+            correct_answers = user_answers_for_quiz.filter(selected_answer__is_correct=True).count()
+            total_questions = quiz.questions.count()
+
+            participants_data.append({
+                'participant': participant,
+                'score': f"{correct_answers}/{total_questions}",
+                'answers': user_answers_for_quiz
+            })
+
+        context['participants_data'] = participants_data
+        return context

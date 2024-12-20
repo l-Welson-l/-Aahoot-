@@ -1,0 +1,26 @@
+<h1>Results for "{{ quiz.title }}"</h1>
+
+{% if participants_data %}
+    <ul>
+        {% for participant_data in participants_data %}
+            <li>
+                <strong>{{ participant_data.participant.username }}</strong> - Score: {{ participant_data.score }}
+                <ul>
+                    {% for user_answer in participant_data.answers %}
+                        <li>
+                            Question: {{ user_answer.question.text }} <br>
+                            Your Answer: {{ user_answer.selected_answer.text }} - 
+                            {% if user_answer.selected_answer.is_correct %}
+                                <span style="color: green;">Correct</span>
+                            {% else %}
+                                <span style="color: red;">Incorrect</span>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No participants have taken this quiz yet.</p>
+{% endif %}

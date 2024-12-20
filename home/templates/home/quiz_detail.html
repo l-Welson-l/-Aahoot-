@@ -2,18 +2,16 @@
 <p>{{ quiz.description }}</p>
 
 {% if user.is_authenticated and quiz.user == user %}
-    <!-- Show edit button for the quiz owner -->
     <a href="{% url 'update_quiz' quiz.id %}"><button>Edit</button></a>
+    <a href="{% url 'quiz_participant_result' quiz.id %}"><button>View Participant Results</button></a>
 {% endif %}
 
 {% if user.is_authenticated %}
     {% if answered_all %}
-        <!-- If the user has answered all questions, show the results button -->
         <a href="{% url 'quiz_results' quiz.id %}">
             <button>View Results</button>
         </a>
     {% else %}
-        <!-- If the user hasn't completed the quiz, show the play form -->
         <form method="post">
             {% csrf_token %}
             <ul>
@@ -35,8 +33,6 @@
 {% else %}
     <p>Please log in to participate in the quiz.</p>
 {% endif %}
-
-<!-- Only show this section if the user is the quiz owner (admin) -->
 {% if user.is_authenticated and quiz.user == user %}
     <ul>
         {% for question in quiz.questions.all %}
