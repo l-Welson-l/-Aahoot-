@@ -36,10 +36,6 @@ class Home(ListView):
         return context
 
 
-
-
-    
-
 class UserLogin (LoginView):
     template_name = 'home/login.html'
     def get_success_url(self):
