@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add your global styles here */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100%;
+        }
+
+        .sidebar-toggle {
+            font-size: 30px;
+            cursor: pointer;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 100;
+        }
+
+        .sidebar {
+            position: fixed;
+            right: -250px; /* Initially hidden off the right side */
+            top: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            transition: right 0.3s ease;
+        }
+
+        .sidebar h3 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .sidebar details {
+            margin-bottom: 10px;
+        }
+
+        .sidebar details summary {
+            font-size: 1.2em;
+            color: white;
+            cursor: pointer;
+            padding: 5px 0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 0;
+            display: block;
+            font-size: 1em;
+        }
+
+        .sidebar li {
+            margin-bottom: 5px;
+        }
+
+        .sidebar.details[open] summary {
+            font-weight: bold;
+        }
+
+        /* Content area styles */
+        .content-container {
+            margin-left: 15px;
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .sidebar.open {
+            right: 0; /* When open, move the sidebar into view */
+        }
+
+        /* Add any other global styles */
+    </style>
+    <title>{% block title %}Quiz Web App{% endblock %}</title>
+</head>
+<body>
+    <div class="gradient-container">
+        <div class="content">
+            {% block content %} <!-- Content block to be overridden in child templates -->
+            {% endblock %}
+        </div>
+    </div>
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>

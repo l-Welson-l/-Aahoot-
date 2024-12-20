@@ -15,10 +15,31 @@ from .models import Quiz, Answer, UserAnswer, Question
 from .forms import QuizForm, QuestionForm, AnswerForm
 from django.forms import modelformset_factory
 
-class home(ListView):
+class Home(ListView):
     template_name = 'home/home.html'
     model = Quiz
     context_object_name = 'home'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        # Set search_query to an empty string by default
+        search_query = self.request.GET.get('q', '')
+
+        if self.request.user.is_authenticated:
+            # Filter quizzes created by the user based on the search query
+            created_quizzes = Quiz.objects.filter(user=self.request.user, title__icontains=search_query)
+        else:
+            created_quizzes = []
+
+        context['created_quizzes'] = created_quizzes
+        context['search_query'] = search_query  # Ensure search_query is always in context
+        return context
+
+
+
+
+    
 
 class UserLogin (LoginView):
     template_name = 'home/login.html'
@@ -55,6 +76,16 @@ class CreateQuiz(CreateView):
         else:
             return redirect('login')
 
+@login_required
+def dashboard(request):
+    user = request.user
+    created_quizzes = Quiz.objects.filter(user=user)
+    played_quizzes = Quiz.objects.filter(questions__answers__user=user).distinct()
+
+    return render(request, 'home/dashboard.html', {
+        'created_quizzes': created_quizzes,
+        'played_quizzes': played_quizzes,
+    })
 
 # class QuizView(DetailView):
 #     model = Quiz
@@ -81,8 +112,6 @@ class CreateQuiz(CreateView):
 #                     defaults={'selected_answer': selected_answer}
 #                 )
 #         return HttpResponseRedirect(reverse('quiz_result', kwargs={'quiz_id': quiz.id}))
-    
-from django.shortcuts import redirect
 
 class QuizView(DetailView):
     model = Quiz
@@ -124,9 +153,11 @@ class QuizView(DetailView):
                     defaults={'selected_answer': selected_answer}
                 )
 
+        # Add user to the participants field after quiz completion
+        quiz.participants.add(user)
+
         # Redirect to results page after submission
         return redirect('quiz_results', quiz.id)
-
 
 
 
@@ -256,6 +287,7 @@ class QuizPlayView(DetailView):
         return redirect('quiz_results', quiz.id)
 
 
+
 # class QuizPlayView(DetailView):
 #     model = Quiz
 #     template_name = 'home/quiz_play.html'
@@ -323,7 +355,7 @@ class QuizResultView(TemplateView):
 
         return context
 
-        
+
 
 # class UserAnswerDetail(DetailView):
 #     model = UserAnswer

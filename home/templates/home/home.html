@@ -1,22 +1,56 @@
+{% extends 'home/main.html' %}
 
+{% block content %}
+    <h1>Quizzes</h1>
 
-<h>Quizes</h>
-
-{% if user.is_authenticated %}
-    <small>Logged in as @{{user}}</small>
-    <form method="post" action="{% url 'logout' %}">
-        {% csrf_token %}
-        <button type="submit">Logout</button>
+    <!-- Search Form -->
+    <form method="get" action="{% url 'home' %}">
+        <input type="text" name="q" value="{{ search_query }}" placeholder="Search for quizzes..." />
+        <button type="submit">Search</button>
     </form>
-{% else %}
-<a href="{% url 'login' %}">Login</a>
-{% endif %}
 
-<a href="{% url 'create_quiz' %}"><button>Create a quiz</button></a>
-{% for quiz in home %}
-<li>
-    <a href="{% url 'quiz' quiz.pk %}">{{quiz.title}}</a>
-    <small>@{{quiz.user}}</small>
-</li>
-{% endfor %}
+    <!-- Sidebar Icon to Open/Close -->
+    <div class="sidebar-toggle" onclick="toggleSidebar()">&#9776;</div>
 
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>My Quizzes</h3>
+        <details>
+            <summary>Created Quizzes</summary>
+            <ul>
+                {% for quiz in created_quizzes %}
+                    <li>
+                        <a href="{% url 'quiz' quiz.id %}">{{ quiz.title }}</a>
+                    </li>
+                {% empty %}
+                    <li>No quizzes created yet.</li>
+                {% endfor %}
+            </ul>
+        </details>
+    </div>
+
+    <div class="content-container">
+        {% if user.is_authenticated %}
+            <small>Logged in as @{{ user }}</small>
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+            </form>
+        {% else %}
+            <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+
+        <a href="{% url 'create_quiz' %}"><button>Create a quiz</button></a>
+        <ul>
+            {% for quiz in home %}
+                <li>
+                    <a href="{% url 'quiz' quiz.pk %}">{{ quiz.title }}</a>
+                    <small>@{{ quiz.user }}</small>
+                </li>
+            {% empty %}
+                <li>No quizzes found.</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}
