@@ -23,17 +23,23 @@ class Home(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        # Set search_query to an empty string by default
+        # Get the search query from the request (defaults to empty string if not provided)
         search_query = self.request.GET.get('q', '')
 
+        # Filter quizzes created by the user based on the search query
         if self.request.user.is_authenticated:
-            # Filter quizzes created by the user based on the search query
             created_quizzes = Quiz.objects.filter(user=self.request.user, title__icontains=search_query)
         else:
             created_quizzes = []
 
+        # Filter all quizzes based on the search query
+        all_quizzes = Quiz.objects.filter(title__icontains=search_query)
+
+        # Add both created quizzes and all quizzes to the context
         context['created_quizzes'] = created_quizzes
-        context['search_query'] = search_query  # Ensure search_query is always in context
+        context['home'] = all_quizzes  # All quizzes (created by everyone)
+        context['search_query'] = search_query  # Include the search query in the context
+
         return context
 
 
