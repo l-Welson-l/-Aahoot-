@@ -8,6 +8,7 @@ class Quiz(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True, null=True)
     time_limit = models.PositiveIntegerField(null=True, blank=True, help_text="Time limit in minutes (leave blank for no time limit)")
+    participants = models.ManyToManyField(User, related_name='played_quizzes', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     def __str__(self):
