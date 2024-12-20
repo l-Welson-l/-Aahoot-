@@ -1,11 +1,9 @@
 {% extends 'home/main.html' %}
 {% block content %}
 
-<a href="{% url 'home' %}", class="hvr-icon-back"><H1>Go to Home</H1></a>
+<a href="{% url 'home' %}" class="hvr-icon-back"><small><i class="fa fa-chevron-circle-left hvr-icon">  </i>Go to Home</small></a>
 
-<a href="{% url 'home' %}">Home</a>
-
-<h>Login</h>
+<h1>Login</h1>
 <form method="post">
     {% csrf_token %}
     {{form}}
