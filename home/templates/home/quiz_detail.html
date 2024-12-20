@@ -28,9 +28,19 @@
                     <li>
                         <p>{{ question.text }}</p>
                         {% for answer in question.answers.all %}
-                            <label>
-                                <input type="radio" name="answer_{{ question.id }}" value="{{ answer.id }}">
-                                {{ answer.text }}
+                            <label class="checkbox-wrapper"> 
+                                <input class="checkbox-wrapper" type="radio" name="answer_{{ question.id }}" value="{{ answer.id }}">
+                                <div class="checkmark">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                      <path
+                                        d="M20 6L9 17L4 12"
+                                        stroke-width="3"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                      ></path>
+                                    </svg>
+                                  </div>
+                                <span class="label">{{ answer.text }}</span>
                             </label>
                         {% endfor %}
                     </li>
@@ -65,7 +75,7 @@
 
     <form method="post" action="{% url 'delete_quiz' quiz.id %}" onsubmit="return confirm('Are you sure you want to delete this quiz?')">
         {% csrf_token %}
-        <button type="submit" value="delete">Delete</button>
+        <button type="submit" value="delete" class="btn">Delete</button>
     </form>
 {% endif %}
 

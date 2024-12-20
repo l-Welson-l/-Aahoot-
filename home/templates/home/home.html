@@ -33,9 +33,8 @@
         {% endif %}
 
         <a href="{% url 'create_quiz' %}"><button>Create a quiz</button></a>
-        <form method="get" action="{% url 'home' %}">
-            <input type="text" name="q" value="{{ search_query }}" placeholder="Search for quizzes..." />
-            <button type="submit">Search</button>
+        <form method="get" action="{% url 'home' %}" class="search-label">
+            <input type="text" name="q" value="{{ search_query }}" placeholder="Search for quizzes..."/><button type="submit">Search</button>
         </form>
         <ul>
             {% for quiz in home %}
