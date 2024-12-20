@@ -1,7 +1,7 @@
 {% extends 'home/main.html' %}
 {% block content %}
 
-
+<a href="{% url 'home' %}" class="hvr-icon-back"><small><i class="fa fa-chevron-circle-left hvr-icon">  </i>Go to Home</small></a>
 
 <h1>Results for {{ quiz.title }}</h1>
 <p>Your Score: {{ score }}/{{ total_questions }}</p>
