@@ -21,7 +21,7 @@
             <button>View Results</button>
         </a>
     {% else %}
-        <form method="post">
+        <form class="content-container" method="post">
             {% csrf_token %}
             <ul>
                 {% for question in questions %}
@@ -55,25 +55,25 @@
 {% if user.is_authenticated and quiz.user == user %}
     <ul>
         {% for question in quiz.questions.all %}
-            <li>
+            <div class="quiz-container">
                 {{ question.text }}
                 <ul>
                     {% for answer in question.answers.all %}
                         <li>{{ answer.text }} (Correct: {{ answer.is_correct|yesno:"Yes,No" }})</li>
                     {% endfor %}
                 </ul>
-                <a href="{% url 'create_answer' question.id %}">Create an Answer</a>
+                <a href="{% url 'create_answer' question.id %}" class="create-answer-link"><i class="fa fa-plus"></i> Add an Answer</a>
                 <form method="post" action="{% url 'delete_question' question.id %}">
                     {% csrf_token %}
                     <button type="submit" class="remove-btn">
                         <i class="fa fa-times"></i> Remove
                     </button>
                 </form>
-            </li>
+            </div>
         {% endfor %}
     </ul>
 
-    <a href="{% url 'create_question' quiz.id %}">Add a Question</a>
+    <a href="{% url 'create_question' quiz.id %}" class="create-btn"><i class="fa fa-plus"></i>Add a Question</a>
 
     <form method="post" action="{% url 'delete_quiz' quiz.id %}" onsubmit="return confirm('Are you sure you want to delete this quiz?')">
         {% csrf_token %}

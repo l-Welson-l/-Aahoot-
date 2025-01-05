@@ -13,6 +13,62 @@
             padding: 0;
             box-sizing: border-box;
         }
+        h1 {
+            text-align: center;
+            color: #FF6347;
+            font-size: 2.5rem;
+            margin: 20px 0;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #ddd;
+        }
+
+        /* Quiz Action Buttons */
+        button {
+            background-color: #FF6347;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #FFD700;
+        }
+
+        /* Edit, View Results, and Other Button Styles */
+        button[type="submit"] {
+            background-color: #4CAF50;
+            border-radius: 5px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Form Styling */
+        form {
+            background-color: #444;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
 
         body {
             font-family: 'Roboto', sans-serif;
@@ -745,8 +801,335 @@
  background-color: currentColor;
 }
 
+        .answer-create-form {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            max-width: 100%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            margin: 20px auto;
+        }
+
+        .answer-create-form h2 {
+            color: #FF6347;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .answer-create-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        .answer-create-form input, .answer-create-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #444;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .answer-create-form textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        .answer-create-form button {
+            background-color: #FF6347;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .answer-create-form button:hover {
+            background-color: #FFD700;
+            transform: scale(1.05);
+        }
+        .question-create-form {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            max-width: 100%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            margin: 20px auto;
+        }
+
+        .question-create-form h2 {
+            color: #FF6347;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .question-create-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        .question-create-form input, .question-create-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #444;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .question-create-form select {
+            font-size: 1.1rem;
+        }
+
+        .question-create-form button {
+            background-color: #FF6347;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .question-create-form button:hover {
+            background-color: #FFD700;
+            transform: scale(1.05);
+        }
+
+        .quiz-results {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            background-color: #333;
+            color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .quiz-results th, .quiz-results td {
+            padding: 12px 20px;
+            text-align: left;
+        }
+
+        .quiz-results th {
+            background-color: #FF6347; /* Header background */
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        .quiz-results td {
+            background-color: #444;
+            font-size: 1rem;
+        }
+
+        .quiz-results td span {
+            font-weight: bold;
+        }
+
+        .quiz-results tr:nth-child(even) td {
+            background-color: #555;
+        }
+
+        .quiz-results tr:hover td {
+            background-color: #666;
+            cursor: pointer;
+        }
+
+        .quiz-results .status-correct {
+            color: rgb(3, 61, 3);
+        }
+
+        .quiz-results .status-wrong {
+            color: red;
+        }
+
+        .quiz-results .score-info {
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 20px 0;
+            color: #FF6347;
+        }
 
 
+
+
+
+
+
+
+        .participants-container {
+            margin-top: 30px;
+        }
+
+        .quiz-participant-result {
+            background-color: #333;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .participant-header {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #FF6347;
+            margin-bottom: 15px;
+        }
+
+        .participant-answers {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .answer-item {
+            background-color: #444;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .question-title {
+            font-size: 1rem;
+            color: #FFD700;
+        }
+
+        .user-answer {
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        .correct-answer {
+            color: rgb(3, 61, 3);
+            font-weight: bold;
+        }
+
+        .incorrect-answer {
+            color: red;
+            font-weight: bold;
+        }
+
+        .quiz-participant-result:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .quiz-participant-result .answer-item:hover {
+            background-color: #555;
+            cursor: pointer;
+        }
+
+
+        /* General Button/Link Styling for Create Answer and Create Question */
+        .create-btn, .create-answer-btn {
+            display: inline-block;
+            background-color: #FF6347;
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px; /* Reduced padding */
+            border-radius: 5px;
+            font-size: 0.95rem; /* Slightly smaller font */
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px; /* Adjusted margin */
+            transition: all 0.3s ease;
+        }
+
+        /* Hover Effects */
+        .create-btn:hover, .create-answer-btn:hover {
+            background-color: #FFD700;
+            color: #2d2d2d;
+            transform: scale(1.05); /* Slight zoom effect */
+        }
+
+        /* Spacing for Icons */
+        .create-btn i, .create-answer-btn i {
+            margin-right: 6px; /* Reduced icon spacing */
+        }
+
+        /* Styling for "Create Question" Button */
+        .create-btn {
+            background-color: #4CAF50;
+            font-size: 1rem; /* Same font size for consistency */
+        }
+
+        .create-btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Styling for "Create Answer" Button */
+        .create-answer-btn {
+            background-color: #1E90FF;
+            color: white;
+            border-radius: 5px; /* Slightly rounded corners */
+            padding: 2.5px 5px; /* Smaller padding */
+            font-size: 14px; /* Smaller text size */
+            font-family: Arial, sans-serif; /* Font style */
+            cursor: pointer; /* Pointer cursor */
+            display: inline-flex; /* Aligns icon and text */
+            align-items: center; /* Center-aligns content */
+            gap: 6px; /* Space between icon and text */
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth animations */
+            margin-left: 10px; /* Add spacing to the left if placed next to the question text */
+        }
+
+        .create-answer-btn:hover {
+            background-color: #4682B4;
+        }
+
+
+        .remove-btn {
+            background-color: #d9534f; /* Light orange */
+            color: white; /* White text */
+            border: none; /* No border */
+            border-radius: 5px; /* Slightly rounded corners */
+            padding: 5px 10px; /* Smaller padding */
+            font-size: 14px; /* Smaller text size */
+            font-family: Arial, sans-serif; /* Font style */
+            cursor: pointer; /* Pointer cursor */
+            display: inline-flex; /* Aligns icon and text */
+            align-items: center; /* Center-aligns content */
+            gap: 6px; /* Space between icon and text */
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth animations */
+            margin-left: 10px; /* Add spacing to the left if placed next to the question text */
+        }
+
+        /* Hover effect */
+        .remove-btn:hover {
+            background-color: #c9302c; /* Slightly darker orange */
+            transform: translateY(-1px); /* Slight lift */
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+
+        /* Styling for the "Add an Answer" text link */
+        .create-answer-link {
+            color: #1E90FF; /* Text color for the link */
+            text-decoration: none; /* Remove underline */
+            font-size: 1rem;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            margin-top: 10px; /* Space above the link */
+        }
+
+        /* Hover effect for the "Add an Answer" text link */
+        .create-answer-link:hover {
+            color: #4682B4; /* Change color on hover */
+        }
 
 
 /**/

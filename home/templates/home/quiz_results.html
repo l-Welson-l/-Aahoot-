@@ -2,9 +2,9 @@
 {% block content %}
 
 <h1>Results for {{ quiz.title }}</h1>
-<p>Your Score: {{ score }}/{{ total_questions }}</p>
+<p class="score-info">Your Score: {{ score }}/{{ total_questions }}</p>
 
-<table>
+<table class="quiz-results">
     <thead>
         <tr>
             <th>Question</th>
@@ -27,15 +27,16 @@
             <td>{{ result.correct_answer.text }}</td>
             <td>
                 {% if result.is_correct %}
-                    <span style="color: green;">Correct</span>
+                    <span class="status-correct">Correct</span>
                 {% else %}
-                    <span style="color: red;">Wrong</span>
+                    <span class="status-wrong">Wrong</span>
                 {% endif %}
             </td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
+
 
 
 

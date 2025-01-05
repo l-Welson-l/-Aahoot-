@@ -4,26 +4,32 @@
 <h1>Results for "{{ quiz.title }}"</h1>
 
 {% if participants_data %}
-    <ul>
+    <div class="participants-container">
         {% for participant_data in participants_data %}
-            <li>
-                <strong>{{ participant_data.participant.username }}</strong> - Score: {{ participant_data.score }}
-                <ul>
+            <div class="quiz-participant-result">
+                <div class="participant-header">
+                    <strong>{{ participant_data.participant.username }}</strong> - Score: {{ participant_data.score }}
+                </div>
+                <ul class="participant-answers">
                     {% for user_answer in participant_data.answers %}
-                        <li>
-                            Question: {{ user_answer.question.text }} <br>
-                            Your Answer: {{ user_answer.selected_answer.text }} - 
-                            {% if user_answer.selected_answer.is_correct %}
-                                <span style="color: green;">Correct</span>
-                            {% else %}
-                                <span style="color: red;">Incorrect</span>
-                            {% endif %}
+                        <li class="answer-item">
+                            <div class="question-title">
+                                <strong>Question:</strong> {{ user_answer.question.text }}
+                            </div>
+                            <div class="user-answer">
+                                <strong>Your Answer:</strong> {{ user_answer.selected_answer.text }} - 
+                                {% if user_answer.selected_answer.is_correct %}
+                                    <span class="correct-answer">Correct</span>
+                                {% else %}
+                                    <span class="incorrect-answer">Incorrect</span>
+                                {% endif %}
+                            </div>
                         </li>
                     {% endfor %}
                 </ul>
-            </li>
+            </div>
         {% endfor %}
-    </ul>
+    </div>
 {% else %}
     <p>No participants have taken this quiz yet.</p>
 {% endif %}

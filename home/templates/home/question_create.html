@@ -5,7 +5,7 @@
 
 <h1>Add Question and Answers</h1>
 
-<form method="post">
+<form class="question-create-form" method="post">
     {% csrf_token %}
     
     <!-- Question Form -->
@@ -16,7 +16,7 @@
     <h3>Answers</h3>
     {{ answer_formset.management_form }}
     {% for form in answer_formset %}
-        <div>
+        <div class="answer-create-form">
             {{ form.text}}
             <label class="cl-checkbox">
                 {{ form.is_correct }}
