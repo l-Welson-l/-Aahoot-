@@ -22,32 +22,36 @@
     </div>
 
     <div class="content-container">
-        {% if user.is_authenticated %}
-            <small>Logged in as @{{ user }}</small>
-            <form method="post" action="{% url 'logout' %}">
-                {% csrf_token %}
-                <button type="submit">Logout</button>
-            </form>
-        {% else %}
-            <a href="{% url 'login' %}">Login</a>
-        {% endif %}
+        <div class="action-container">
+            {% if user.is_authenticated %}
+                <small>Logged in as @{{ user }}</small>
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit">Logout</button>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}">Login</a>
+            {% endif %}
 
-        <a href="{% url 'create_quiz' %}"><button>Create a quiz</button></a>
-        <form method="get" action="{% url 'home' %}">
-            <label>
-                <input class="input" type="text" name="q" value="{{ search_query }}" placeholder="Search...."/>
-            </label>
-        </form>
-        <ul>
+            <a href="{% url 'create_quiz' %}"><button>Create a quiz</button></a>
+            <form method="get" action="{% url 'home' %}">
+                <label>
+                    <input class="input" type="text" name="q" value="{{ search_query }}" placeholder="Search...."/>
+                </label>
+            </form>
+        </div>
+        <div class="quiz-container">
             {% for quiz in home %}
-                <li>
-                    <a href="{% url 'quiz' quiz.pk %}">{{ quiz.title }}</a>
-                    <small>@{{ quiz.user }}</small>
-                </li>
+                <div class="quiz-card">
+                    <h2><a href="{% url 'quiz' quiz.pk %}">{{ quiz.title }}</a></h2>
+                    <p class="creator">Created by: @{{ quiz.user }}</p>
+                    <p>Created on: {{ quiz.created_at|date:"M d, Y" }}</p>
+                    <a href="{% url 'quiz' quiz.pk %}"><button class="take-quiz-btn">Take Quiz</button></a>
+                </div>
             {% empty %}
-                <li>No quizzes found.</li>
+                <p>No quizzes found.</p>
             {% endfor %}
-        </ul>
+        </div>
     </div>
 
 {% endblock %}

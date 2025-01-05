@@ -4,41 +4,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <title>{% block title %}AAhoot Quiz App{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Add your global styles here */
-        body, html {
+        /* General reset */
+        * {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            display: unset;
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
+            box-sizing: border-box;
         }
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1; /* Ensures it's in the background */
-            background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fbc2eb);
-            background-size: 300% 300%;
-            animation: gradient-move 10s ease infinite;
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #2d2d2d;
+            color: white;
+            margin: 0;
+            padding: 0;
         }
-        @keyframes gradient-move {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+        /* Header section */
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #121212;
         }
-        
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: #FF6347;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+
+        /* Quiz Cards Container */
+        .quiz-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px; /* Increased gap for spacing */
+            padding: 20px;
+        }
+
+        /* Individual Quiz Card */
+        .quiz-card {
+            background-color: #333;
+            border-radius: 10px;
+            padding: 20px;
+            width: 280px;
+            height: 200px; /* Adjust height as needed */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .quiz-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+        .quiz-card a {
+            text-decoration: none;
+            color: #FF6347; /* Matches your design theme */
+            transition: color 0.3s ease;
+        }
+
+        .quiz-card a:hover {
+            color: #FFD700; /* Adds a hover effect */
+        }
+
+        .quiz-card h2 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #FF6347;
+            font-weight: bold;
+        }
+        .quiz-card h2 a:hover {
+            color: #FFD700; /* Matches link hover style */
+        }
+
+
+        .quiz-card p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 20px 0;
+            color: #FF6347;
+        }
+
+        .quiz-card .creator {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        /* Footer styling */
+        footer {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            text-align: center;
+            color: white;
+        }
+
+        footer a {
+            color: #FF6347;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #FFD700;
+        }
+
+        .take-quiz-btn {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-top: 10px;
+            background-color: #FF6347;
+            color: white;
+            text-transform: uppercase;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .take-quiz-btn:hover {
+            background-color: #FFD700;
+            color: #333;
+            transform: scale(1.05);
+        }
+
+
 
         .sidebar-toggle {
             font-size: 30px;
@@ -104,64 +217,148 @@
 
         /* Content area styles */
         .content-container {
-            margin-left: 15px;
+            margin: 20px auto;
+            max-width: 1200px;
             padding: 20px;
-            flex-grow: 1;
         }
 
         .sidebar.open {
             right: 0; /* When open, move the sidebar into view */
         }
 
-        /* Icon Back */
-
-        .hvr-icon-back {
-            display: inline-block;
-            vertical-align: middle;
-            -webkit-transform: perspective(1px) translateZ(0);
-            transform: perspective(1px) translateZ(0);
-            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-            -webkit-transition-duration: 0.1s;
-            transition-duration: 0.1s;
-        }
-        .hvr-icon-back .hvr-icon {
-            -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-            -webkit-transition-duration: 0.1s;
-            transition-duration: 0.1s;
-            -webkit-transition-property: transform;
-            transition-property: transform;
-            -webkit-transition-timing-function: ease-out;
-            transition-timing-function: ease-out;
-        }
-            .hvr-icon-back:hover .hvr-icon, .hvr-icon-back:focus .hvr-icon, .hvr-icon-back:active .hvr-icon {
-            -webkit-transform: translateX(-4px);
-            transform: translateX(-4px);
-        }
-
         /* Search label */
-        
         .input {
-            padding: 10px;
-            width: 120px;
-            border: none;
+            width: 300px;
+            padding: 10px 15px;
+            border: 2px solid #444;
+            border-radius: 25px;
+            font-size: 1rem;
+            background-color: #2d2d2d;
+            color: white;
             outline: none;
-            border-radius: 5px;
-            box-shadow: 0 1px  gray;
-            font-size: 18px;
-            transition: width 0.3s;
-            font-family: Consolas,monaco,monospace;
-        }
-
-        .input:focus {
-            outline: 1px solid blue;
-            box-shadow: none;
-            width: 230px;
+            transition: all 0.3s ease;
         }
 
         .input::placeholder {
-            color: blue;
+            color: #aaa;
         }
+
+        .input:focus {
+            border-color: #FF6347;
+        }
+
+        /* Search Button */
+        input[type="submit"] {
+            display: inline-block;
+            margin-left: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            background-color: #FF6347;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #FFD700;
+            color: #2d2d2d;
+        }
+        /* Create Quiz Button */
+        a button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FF6347;
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        a button:hover {
+            background-color: #FFD700;
+            color: #2d2d2d;
+        }
+
+        /* Logged In Text */
+        small {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: #ccc;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* Logout Button */
+        form button[type="submit"] {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #FF6347;
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        form button[type="submit"]:hover {
+            background-color: #FFD700;
+            color: #2d2d2d;
+        }
+
+        /* Container for actions */
+        .action-container {
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center align horizontally */
+            gap: 15px; /* Spacing between elements */
+            margin: 20px 0;
+            background-color: #333; /* Optional background for distinction */
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        /* Style the user info text */
+        .action-container .user-info {
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+        .action-container .input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        /* Buttons */
+        .action-container button, 
+        .action-container a {
+            background-color: #FF6347;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .action-container button:hover,
+        .action-container a:hover {
+            background-color: #FF4500;
+            transform: scale(1.05);
+        }
+
+        /* Add padding around the entire action area */
+
+
         /* Remove button  */
         /* Base style for the remove button */
         .remove-btn {
@@ -556,17 +753,15 @@
 
         /* Add any other global styles */
     </style>    
-    <title>{% block title %}Quiz Web App{% endblock %}</title>
 </head>
 <body>
-    <div class="gradient-container">
-        <div id="particles-js"></div>
-        <div class="content">
-            {% block content %} <!-- Content block to be overridden in child templates -->
-            {% endblock %}
-        </div>
+    <header>
+        <a href="{% url 'home' %}" style="text-decoration:none"><h1>AAhoot</h1></a>
+    </header>
+    <div class="content">
+        {% block content %}
+        {% endblock %}
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
     <script>
         function toggleSidebar() {
             const sidebar = document.querySelector('.sidebar');
