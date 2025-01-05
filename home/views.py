@@ -15,19 +15,26 @@ from .models import Quiz, Answer, UserAnswer, Question
 from .forms import QuizForm, QuestionForm, AnswerForm
 from django.forms import modelformset_factory
 
+def logged_out(request):
+    if request.user.is_authenticated:
+        return redirect('home')  
+    return render(request, 'home/logged_out.html')
+
 class Home(ListView):
     template_name = 'home/home.html'
     model = Quiz
     context_object_name = 'home'
 
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return redirect('logged_out')
+        return super().dispatch(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         search_query = self.request.GET.get('q', '')
-        if self.request.user.is_authenticated:
-            created_quizzes = Quiz.objects.filter(user=self.request.user, title__icontains=search_query)
-        else:
-            created_quizzes = []
+        created_quizzes = Quiz.objects.filter(user=self.request.user, title__icontains=search_query)
+        created_quizzes = []
         all_quizzes = Quiz.objects.filter(title__icontains=search_query)
         context['created_quizzes'] = created_quizzes
         context['home'] = all_quizzes 
@@ -388,3 +395,4 @@ class QuizParticipantResultsView(DetailView):
 
         context['participants_data'] = participants_data
         return context
+

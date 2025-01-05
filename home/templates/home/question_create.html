@@ -17,12 +17,18 @@
     {{ answer_formset.management_form }}
     {% for form in answer_formset %}
         <div>
-            {{ form.as_p }}
+            {{ form.text}}
+            <label class="cl-checkbox">
+                {{ form.is_correct }}
+                <span></span>
+              </label>            
         </div>
     {% endfor %}
     
     <button type="submit">Save</button>
 </form>
+
+
 
 
 {% endblock %}

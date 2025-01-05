@@ -11,8 +11,32 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            display: flex;
+            display: unset;
             height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1; /* Ensures it's in the background */
+            background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fbc2eb);
+            background-size: 300% 300%;
+            animation: gradient-move 10s ease infinite;
+        }
+        @keyframes gradient-move {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
         
 
@@ -27,7 +51,7 @@
 
         .sidebar {
             position: fixed;
-            right: -250px; /* Initially hidden off the right side */
+            right: -300px; /* Initially hidden off the right side */
             top: 0;
             width: 250px;
             height: 100%;
@@ -116,118 +140,129 @@
         }
 
         /* Search label */
-        .search-label {
-            display: flex;
-            align-items: center;
-            box-sizing: border-box;
-            position: relative;
-            border: 1px solid transparent;
-            border-radius: 12px;
-            overflow: hidden;
-            background: #3D3D3D;
-            padding: 9px;
-            cursor: text;
-        }
-
-        .search-label:hover {
-            border-color: gray;
-        }
-
-        .search-label:focus-within {
-            background: #464646;
-            border-color: gray;
-        }
-
-        .search-label input {
-            outline: none;
-            width: 100%;
+        
+        .input {
+            padding: 10px;
+            width: 120px;
             border: none;
-            background: none;
-            color: rgb(162, 162, 162);
+            outline: none;
+            border-radius: 5px;
+            box-shadow: 0 1px  gray;
+            font-size: 18px;
+            transition: width 0.3s;
+            font-family: Consolas,monaco,monospace;
         }
 
-        .search-label input:focus+.slash-icon,
-        .search-label input:valid+.slash-icon {
-            display: none;
+        .input:focus {
+            outline: 1px solid blue;
+            box-shadow: none;
+            width: 230px;
         }
 
-        .search-label input:valid~.search-icon {
-            display: block;
+        .input::placeholder {
+            color: blue;
+        }
+        /* Remove button  */
+        /* Base style for the remove button */
+        .remove-btn {
+            background-color: #d9534f; /* Light orange */
+            color: white; /* White text */
+            border: none; /* No border */
+            border-radius: 5px; /* Slightly rounded corners */
+            padding: 5px 10px; /* Smaller padding */
+            font-size: 14px; /* Smaller text size */
+            font-family: Arial, sans-serif; /* Font style */
+            cursor: pointer; /* Pointer cursor */
+            display: inline-flex; /* Aligns icon and text */
+            align-items: center; /* Center-aligns content */
+            gap: 6px; /* Space between icon and text */
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth animations */
+            margin-left: 10px; /* Add spacing to the left if placed next to the question text */
         }
 
-        .search-label input:valid {
-            width: calc(100% - 22px);
-            transform: translateX(20px);
+        /* Hover effect */
+        .remove-btn:hover {
+            background-color: #c9302c; /* Slightly darker orange */
+            transform: translateY(-1px); /* Slight lift */
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
         }
 
-        .search-label svg,
-        .slash-icon {
-            position: absolute;
-            color: #7e7e7e;
+        /* Active (click) effect */
+        .remove-btn:active {
+            background-color: #ac2925; /* Even darker orange */
+            transform: translateY(1px); /* Pressed-down effect */
         }
 
-        .search-icon {
-            display: none;
-            width: 12px;
-            height: auto;
+        /* Disabled state */
+        .remove-btn:disabled {
+            background-color: #e6b8b7; /* Light gray background */
+            color: #b58d8d; /* Dimmed text */
+            cursor: not-allowed; /* Disabled cursor */
+            box-shadow: none; /* No shadow */
         }
 
-        .slash-icon {
-            right: 7px;
-            border: 1px solid #393838;
-            background: linear-gradient(-225deg, #343434, #6d6d6d);
-            border-radius: 3px;
-            text-align: center;
-            box-shadow: inset 0 -2px 0 0 #3f3f3f, inset 0 0 1px 1px rgb(94, 93, 93), 0 1px 2px 1px rgba(28, 28, 29, 0.4);
-            cursor: pointer;
-            font-size: 12px;
-            width: 15px;
+        /* Icon styles */
+        .remove-btn i {
+            font-size: 12px; /* Smaller icon size */
+            color: inherit; /* Matches text color */
         }
 
-        .slash-icon:active {
-            box-shadow: inset 0 1px 0 0 #3f3f3f, inset 0 0 1px 1px rgb(94, 93, 93), 0 1px 2px 0 rgba(28, 28, 29, 0.4);
-            text-shadow: 0 1px 0 #7e7e7e;
-            color: transparent;
-        }
 
         /* delete button */
-        .btn {
-            width: 6.5em;
-            height: 2.3em;
-            margin: 0.5em;
-            background: black;
-            color: white;
-            border: none;
-            border-radius: 0.625em;
-            font-size: 20px;
+        /* Base button styles */
+        .delete-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
             font-weight: bold;
+            color: white;
+            background-color: #f44336; /* Red color */
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
-            position: relative;
-            z-index: 1;
-            overflow: hidden;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        button:hover {
-            color: black;
+        /* Hover effect */
+        .delete-btn:hover {
+            background-color: #d32f2f; /* Slightly darker red */
+            transform: scale(1.05); /* Subtle zoom-in effect */
         }
 
-        button:after {
-            content: "";
-            background: white;
-            position: absolute;
-            z-index: -1;
-            left: -20%;
-            right: -20%;
-            top: 0;
-            bottom: 0;
-            transform: skewX(-45deg) scale(0, 1);
-            transition: all 0.5s;
+        /* Active (click) effect */
+        .delete-btn:active {
+            background-color: #b71c1c; /* Even darker red */
+            transform: scale(0.95); /* Slight zoom-out effect */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduced shadow */
         }
 
-        button:hover:after {
-            transform: skewX(-45deg) scale(1, 1);
-            -webkit-transition: all 0.5s;
-            transition: all 0.5s;
+        /* Disabled button styles */
+        .delete-btn:disabled {
+            background-color: #e57373; /* Muted red */
+            cursor: not-allowed;
+            opacity: 0.7;
+            box-shadow: none;
+        }
+
+        /* Icon style inside the button */
+        .delete-btn i {
+            margin-right: 8px;
+            font-size: 18px;
+            vertical-align: middle;
+        }
+
+        /* Animation (optional) */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-4px); }
+            50% { transform: translateX(4px); }
+            75% { transform: translateX(-4px); }
+        }
+
+        .delete-btn.shake {
+            animation: shake 0.3s ease-in-out;
         }
 
         /* CkeckBox */
@@ -375,6 +410,149 @@
             transform: translateX(10px);
             box-shadow: 0 0 10px var(--checkbox-color);
         }
+        /* Checkbox */
+        .cl-checkbox {
+ position: relative;
+ display: inline-block;
+}
+
+/* Input */
+.cl-checkbox > input {
+ appearance: none;
+ -moz-appearance: none;
+ -webkit-appearance: none;
+ z-index: -1;
+ position: absolute;
+ left: -10px;
+ top: -8px;
+ display: block;
+ margin: 0;
+ border-radius: 50%;
+ width: 40px;
+ height: 40px;
+ background-color: rgba(0, 0, 0, 0.6);
+ box-shadow: none;
+ outline: none;
+ opacity: 0;
+ transform: scale(1);
+ pointer-events: none;
+ transition: opacity 0.3s, transform 0.2s;
+}
+
+/* Span */
+.cl-checkbox > span {
+ display: inline-block;
+ width: 100%;
+ cursor: pointer;
+}
+
+/* Box */
+.cl-checkbox > span::before {
+ content: "";
+ display: inline-block;
+ box-sizing: border-box;
+ margin: 3px 11px 3px 1px;
+ border: solid 2px;
+ /* Safari */
+ border-color: rgba(0, 0, 0, 0.6);
+ border-radius: 2px;
+ width: 18px;
+ height: 18px;
+ vertical-align: top;
+ transition: border-color 0.2s, background-color 0.2s;
+}
+
+/* Checkmark */
+.cl-checkbox > span::after {
+ content: "";
+ display: block;
+ position: absolute;
+ top: 3px;
+ left: 1px;
+ width: 10px;
+ height: 5px;
+ border: solid 2px transparent;
+ border-right: none;
+ border-top: none;
+ transform: translate(3px, 4px) rotate(-45deg);
+}
+
+/* Checked, Indeterminate */
+.cl-checkbox > input:checked,
+.cl-checkbox > input:indeterminate {
+ background-color: #018786;
+}
+
+.cl-checkbox > input:checked + span::before,
+.cl-checkbox > input:indeterminate + span::before {
+ border-color: #018786;
+ background-color: #018786;
+}
+
+.cl-checkbox > input:checked + span::after,
+.cl-checkbox > input:indeterminate + span::after {
+ border-color: #fff;
+}
+
+.cl-checkbox > input:indeterminate + span::after {
+ border-left: none;
+ transform: translate(4px, 3px);
+}
+
+/* Hover, Focus */
+.cl-checkbox:hover > input {
+ opacity: 0.04;
+}
+
+.cl-checkbox > input:focus {
+ opacity: 0.12;
+}
+
+.cl-checkbox:hover > input:focus {
+ opacity: 0.16;
+}
+
+/* Active */
+.cl-checkbox > input:active {
+ opacity: 1;
+ transform: scale(0);
+ transition: transform 0s, opacity 0s;
+}
+
+.cl-checkbox > input:active + span::before {
+ border-color: #85b8b7;
+}
+
+.cl-checkbox > input:checked:active + span::before {
+ border-color: transparent;
+ background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Disabled */
+.cl-checkbox > input:disabled {
+ opacity: 0;
+}
+
+.cl-checkbox > input:disabled + span {
+ color: rgba(0, 0, 0, 0.38);
+ cursor: initial;
+}
+
+.cl-checkbox > input:disabled + span::before {
+ border-color: currentColor;
+}
+
+.cl-checkbox > input:checked:disabled + span::before,
+.cl-checkbox > input:indeterminate:disabled + span::before {
+ border-color: transparent;
+ background-color: currentColor;
+}
+
+
+
+
+
+/**/
 
         /* Add any other global styles */
     </style>    
@@ -382,11 +560,13 @@
 </head>
 <body>
     <div class="gradient-container">
+        <div id="particles-js"></div>
         <div class="content">
             {% block content %} <!-- Content block to be overridden in child templates -->
             {% endblock %}
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
     <script>
         function toggleSidebar() {
             const sidebar = document.querySelector('.sidebar');
