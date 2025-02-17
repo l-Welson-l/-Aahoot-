@@ -175,7 +175,7 @@ class QuizDelete(DeleteView):
 class QuestionCreate(CreateView):
     template_name = 'home/question_create.html'
     QuestionForm = QuestionForm
-    AnswerFormSet = modelformset_factory(Answer, fields=('text', 'is_correct'), extra=3)  # Adjust `extra` for default number of answers
+    AnswerFormSet = modelformset_factory(Answer, fields=('text', 'is_correct'), extra=3)  
 
     def get(self, request, *args, **kwargs):
         quiz_id = kwargs['quiz_id']
