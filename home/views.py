@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import login, logout
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User 
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import PermissionDenied
@@ -20,6 +20,16 @@ def logged_out(request):
         return redirect('home')  
     return render(request, 'home/logged_out.html')
 
+def user_search(request):
+    query = request.GET.get('q', '')
+    users = User.objects.filter(username__icontains=query) if query else []
+    return render(request, 'home/user_search.html', {'users': users, 'query': query})
+
+def user_profile(request, username):
+    user = User.objects.get(username=username)
+    quizzes = Quiz.objects.filter(user=user)
+    return render(request, 'home/user_profile.html', {'profile_user': user, 'quizzes': quizzes})
+
 class Home(ListView):
     template_name = 'home/home.html'
     model = Quiz
@@ -33,9 +43,10 @@ class Home(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         search_query = self.request.GET.get('q', '')
+        
         created_quizzes = Quiz.objects.filter(user=self.request.user, title__icontains=search_query)
-        created_quizzes = []
         all_quizzes = Quiz.objects.filter(title__icontains=search_query)
+
         context['created_quizzes'] = created_quizzes
         context['home'] = all_quizzes 
         context['search_query'] = search_query

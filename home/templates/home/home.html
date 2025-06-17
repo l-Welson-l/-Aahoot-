@@ -1,8 +1,6 @@
 {% extends 'home/main.html' %}
 {% block content %}
 
-
-    <h1>Quizzes</h1>
     <div class="sidebar-toggle" onclick="toggleSidebar()">&#9776;</div>
 
     <div class="sidebar">
@@ -39,6 +37,7 @@
                     <input class="input" type="text" name="q" value="{{ search_query }}" placeholder="Search...."/>
                 </label>
             </form>
+            <a href="{% url 'user_search' %}" class="user-link">Users</a>
         </div>
         <div class="quiz-container">
             {% for quiz in home %}

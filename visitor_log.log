@@ -277,3 +277,368 @@ Not Found: /favicon.ico
 - Broken pipe from ('127.0.0.1', 50374)
 "POST /login/ HTTP/1.1" 302 0
 "GET / HTTP/1.1" 200 38148
+"GET /quiz/15/ HTTP/1.1" 200 43133
+"GET /quiz/15/participant-results/ HTTP/1.1" 200 86417
+"GET / HTTP/1.1" 200 38148
+"GET /quiz/20/ HTTP/1.1" 200 34038
+"GET /quiz/20/result/ HTTP/1.1" 200 34218
+"GET / HTTP/1.1" 200 38148
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\urls.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/base/user/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/base/user/ HTTP/1.1" 200 3694
+"GET /static/admin/css/base.css HTTP/1.1" 200 22092
+"GET /static/admin/css/login.css HTTP/1.1" 200 951
+"GET /static/admin/css/responsive.css HTTP/1.1" 200 17972
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2804
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+"GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+"GET / HTTP/1.1" 200 38148
+"GET / HTTP/1.1" 200 38148
+Not Found: /search
+"GET /search HTTP/1.1" 404 7104
+"GET /search/users HTTP/1.1" 301 0
+Internal Server Error: /search/users/
+Traceback (most recent call last):
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\welson\Desktop\quiz_project\quiz\home\views.py", line 26, in user_search
+    return render(request, 'quiz/user_search.html', {'users': users, 'query': query})
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: quiz/user_search.html
+"GET /search/users/ HTTP/1.1" 500 83436
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /search/users/ HTTP/1.1" 200 34060
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 50782)
+"GET /search/users/?q=User HTTP/1.1" 200 34563
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 50784)
+"GET /profile/TestUser1/ HTTP/1.1" 200 33972
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 50785)
+"GET / HTTP/1.1" 200 38148
+"POST /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /login/ HTTP/1.1" 200 34995
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 38148
+Not Found: /serch/users
+"GET /serch/users HTTP/1.1" 404 7119
+"GET /search/users HTTP/1.1" 301 0
+"GET /search/users/ HTTP/1.1" 200 34060
+"GET /search/users/?q=User HTTP/1.1" 200 34563
+Internal Server Error: /profile/User1/
+Traceback (most recent call last):
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\welson\Desktop\quiz_project\quiz\home\views.py", line 31, in user_profile
+    return render(request, 'home/user_profile.html', {'profile_user': user, 'quizzes': quizzes})
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'quiz_detail' not found. 'quiz_detail' is not a valid view function or pattern name.
+"GET /profile/User1/ HTTP/1.1" 500 176944
+"GET /search/users/ HTTP/1.1" 200 34060
+"GET /profile/User1/ HTTP/1.1" 200 35587
+"GET /quiz/28/ HTTP/1.1" 200 34024
+"GET /quiz/28/result/ HTTP/1.1" 200 34212
+"GET / HTTP/1.1" 200 38148
+"GET /search/users/ HTTP/1.1" 200 34060
+"GET /search/users/?q=user2 HTTP/1.1" 200 34156
+"GET /profile/User2/ HTTP/1.1" 200 34126
+"GET / HTTP/1.1" 200 38148
+"GET /quiz/20/ HTTP/1.1" 200 34693
+"GET / HTTP/1.1" 200 38148
+"GET /quiz/15/ HTTP/1.1" 200 64026
+"GET / HTTP/1.1" 200 38148
+"GET /quiz/28/ HTTP/1.1" 200 34024
+"GET /quiz/28/result/ HTTP/1.1" 200 34212
+"GET / HTTP/1.1" 200 38148
+"GET /quiz/29/ HTTP/1.1" 200 34026
+"GET / HTTP/1.1" 200 38148
+"GET /quiz/26/ HTTP/1.1" 200 34038
+"GET / HTTP/1.1" 200 38148
+"GET /quiz/15/ HTTP/1.1" 200 64026
+"POST /quiz/15/ HTTP/1.1" 302 0
+"GET /quiz/15/result/ HTTP/1.1" 200 37086
+"GET / HTTP/1.1" 200 38148
+"GET /quiz/15/ HTTP/1.1" 200 34044
+"GET / HTTP/1.1" 200 38148
+"GET / HTTP/1.1" 200 38156
+"GET / HTTP/1.1" 200 38156
+"GET / HTTP/1.1" 200 38148
+"GET / HTTP/1.1" 200 38395
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 38204
+"GET /quiz/20/ HTTP/1.1" 200 34693
+"GET / HTTP/1.1" 200 38204
+"GET / HTTP/1.1" 200 39083
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 563, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 43: 'static', expected 'endblock'. Did you forget to register or load this tag?
+"GET / HTTP/1.1" 500 189222
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\loader_tags.py", line 295, in do_extends
+    nodelist = parser.parse()
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 563, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 43: 'static', expected 'endblock'. Did you forget to register or load this tag?
+"GET / HTTP/1.1" 500 189222
+"GET / HTTP/1.1" 200 39083
+"GET / HTTP/1.1" 200 39083
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 51207)
+"GET / HTTP/1.1" 200 39055
+"GET / HTTP/1.1" 200 39026
+"GET / HTTP/1.1" 200 39026
+"GET / HTTP/1.1" 200 38839
+"GET / HTTP/1.1" 200 38839
+"GET / HTTP/1.1" 200 38922
+"GET / HTTP/1.1" 200 38922
+"GET / HTTP/1.1" 200 38903
+"GET / HTTP/1.1" 200 38903
+"GET / HTTP/1.1" 200 39090
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 51322)
+"GET /search/users/ HTTP/1.1" 200 34745
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 51325)
+"GET / HTTP/1.1" 200 39090
+"GET / HTTP/1.1" 200 39091
+"GET / HTTP/1.1" 200 39091
+"GET / HTTP/1.1" 200 39092
+"GET / HTTP/1.1" 200 39091
+"GET / HTTP/1.1" 200 39100
+"GET / HTTP/1.1" 200 39104
+"GET / HTTP/1.1" 200 39104
+"GET / HTTP/1.1" 200 38710
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 51386)
+"GET /search/users/ HTTP/1.1" 200 34501
+"GET / HTTP/1.1" 200 38710
+"GET / HTTP/1.1" 200 38711
+"GET / HTTP/1.1" 200 38711
+"GET /search/users/ HTTP/1.1" 200 34502
+"GET / HTTP/1.1" 200 38711
+"GET / HTTP/1.1" 200 38711
+"GET /search/users/ HTTP/1.1" 200 34517
+"GET /search/users/ HTTP/1.1" 200 34517
+"GET / HTTP/1.1" 200 38711
+"GET /search/users/ HTTP/1.1" 200 34517
+"GET / HTTP/1.1" 200 38711
+"GET /search/users/ HTTP/1.1" 200 34517
+"GET /search/users/?q=None HTTP/1.1" 200 34545
+"GET /search/users/?q= HTTP/1.1" 200 34513
+"GET /search/users/?q= HTTP/1.1" 200 34513
+"GET /search/users/?q=Use HTTP/1.1" 200 35019
+"GET /search/users/?q=A HTTP/1.1" 200 34621
+"GET / HTTP/1.1" 200 38711
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 38711

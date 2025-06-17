@@ -18,5 +18,6 @@ urlpatterns = [
     path('quiz/<int:pk>/participant-results/', QuizParticipantResultsView.as_view(), name='quiz_participant_result'),
     path('dashboard/', dashboard, name='dashboard'),
     path('logged_out/', views.logged_out, name='logged_out'),
-
+    path('search/users/', views.user_search, name='user_search'),
+    path('profile/<str:username>/', views.user_profile, name='user_profile'),
 ]
