@@ -1,15 +1,60 @@
 {% extends 'home/main.html' %}
 {% block content %}
+<div class="reg-wrapper">
+    <div class="reg-card">
+    <div class="reg-card-header">
+        <div class="text-header">Register</div>
+    </div>
+    <div class="reg-card-body">
+        <form method="post">
+        {% csrf_token %}
 
+        <!-- Show form-wide (non-field) errors -->
+        {% if form.non_field_errors %}
+            <div class="form-error">
+            {{ form.non_field_errors }}
+            </div>
+        {% endif %}
 
-<h>Register</h>
-<form method="post">
+        <!-- Username -->
+        <div class="reg-form-group">
+            <label for="{{ form.username.id_for_label }}">Username:</label>
+            {{ form.username }}
+            {% if form.username.errors %}
+            <div class="form-error">{{ form.username.errors }}</div>
+            {% endif %}
+        </div>
+        
+        <!-- Password1 -->
+        <div class="reg-form-group">
+            <label for="{{ form.password1.id_for_label }}">Password:</label>
+            {{ form.password1 }}
+            {% if form.password1.errors %}
+            <div class="form-error">{{ form.password1.errors }}</div>
+            {% endif %}
+        </div>
+
+        <!-- Password2 -->
+        <div class="reg-form-group">
+            <label for="{{ form.password2.id_for_label }}">Confirm Password:</label>
+            {{ form.password2 }}
+            {% if form.password2.errors %}
+            <div class="form-error">{{ form.password2.errors }}</div>
+            {% endif %}
+        </div>
+
+        <input type="submit" class="btn" value="Register">
+        </form>
+        <a>Already have an accout?? <a href="{% url 'login' %}">Login</a></a>
+    </div>
+    </div>
+</div>
+
+<!-- <form method="post">
     {% csrf_token %}
     {{form.as_p}}
     <input type="submit" value="Register"/>
-</form>
-<a>Already have an accout?? <a href="{% url 'login' %}">Login</a></a>
-
+</form> -->
 
 
 {% endblock %}

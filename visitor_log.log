@@ -1,0 +1,279 @@
+Watching for file changes with StatReloader
+"GET /logged_out/ HTTP/1.1" 200 4920
+Watching for file changes with StatReloader
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /login/ HTTP/1.1" 200 31387
+C:\Users\welson\Desktop\quiz_project\quiz\quiz\settings.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /static/js/particles.js HTTP/1.1" 200 43009
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /static/js/particles.js HTTP/1.1" 200 43009
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6588
+"GET /login/ HTTP/1.1" 200 31387
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /login/ HTTP/1.1" 200 31387
+Forbidden (Origin checking failed - https://4ceb-95-92-66-187.ngrok-free.app does not match any trusted origins.): /login/
+"POST /login/ HTTP/1.1" 403 2573
+"GET /login/ HTTP/1.1" 200 31387
+Forbidden (Origin checking failed - https://4ceb-95-92-66-187.ngrok-free.app does not match any trusted origins.): /login/
+"POST /login/ HTTP/1.1" 403 2573
+"GET /login/ HTTP/1.1" 200 31387
+"GET /register/ HTTP/1.1" 200 31910
+Forbidden (Origin checking failed - https://4ceb-95-92-66-187.ngrok-free.app does not match any trusted origins.): /register/
+"POST /register/ HTTP/1.1" 403 2573
+Forbidden (Origin checking failed - https://4ceb-95-92-66-187.ngrok-free.app does not match any trusted origins.): /register/
+"POST /register/ HTTP/1.1" 403 2573
+"GET /register HTTP/1.1" 301 0
+"GET /register/ HTTP/1.1" 200 31910
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /login/ HTTP/1.1" 200 31387
+Forbidden (Origin checking failed - https://4ceb-95-92-66-187.ngrok-free.app does not match any trusted origins.): /login/
+"POST /login/ HTTP/1.1" 403 2573
+C:\Users\welson\Desktop\quiz_project\quiz\quiz\settings.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /login HTTP/1.1" 301 0
+"GET /login/ HTTP/1.1" 200 31387
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /login/ HTTP/1.1" 200 31387
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 34984
+"GET / HTTP/1.1" 200 34984
+"GET / HTTP/1.1" 200 34984
+"GET / HTTP/1.1" 200 34984
+"GET / HTTP/1.1" 200 34984
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 34984
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /login/ HTTP/1.1" 200 31387
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 34984
+"GET / HTTP/1.1" 200 35259
+"GET / HTTP/1.1" 200 35394
+C:\Users\welson\Desktop\quiz_project\quiz\quiz\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\quiz\settings.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /static/js/particles.js HTTP/1.1" 200 43009
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6588
+"GET /login/ HTTP/1.1" 200 31797
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 35394
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /static/js/particles.js HTTP/1.1" 200 43009
+"GET / HTTP/1.1" 200 35778
+"GET / HTTP/1.1" 200 35778
+"GET / HTTP/1.1" 200 35793
+"GET / HTTP/1.1" 200 35793
+"GET / HTTP/1.1" 200 35793
+"GET / HTTP/1.1" 200 35793
+"GET /login/ HTTP/1.1" 200 32196
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 35793
+"GET /login/ HTTP/1.1" 200 32196
+"GET /login/ HTTP/1.1" 200 32196
+"GET /logged_out/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 35793
+"GET /quiz/15/ HTTP/1.1" 200 40778
+"POST /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /register/ HTTP/1.1" 200 32719
+"POST /register/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 35792
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /static/js/particles.js HTTP/1.1" 200 43009
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6588
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6588
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /static/js/particles.js HTTP/1.1" 200 43009
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6588
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6588
+"GET /register/ HTTP/1.1" 200 32719
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6588
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6588
+"POST /register/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 35791
+"GET /login/ HTTP/1.1" 200 32196
+"GET /register/ HTTP/1.1" 200 32719
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 35792
+"GET /quiz/15/ HTTP/1.1" 200 61671
+"GET / HTTP/1.1" 200 35791
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6588
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6588
+"POST /quiz/15/ HTTP/1.1" 302 0
+"GET /quiz/15/result/ HTTP/1.1" 200 34731
+"GET / HTTP/1.1" 200 35792
+"GET / HTTP/1.1" 200 35791
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6588
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6588
+"GET /quiz/15/result/ HTTP/1.1" 200 34731
+"GET /quiz/15/ HTTP/1.1" 200 31689
+"GET / HTTP/1.1" 200 35792
+"GET /login/ HTTP/1.1" 200 32196
+"GET /logged_out/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 35792
+"GET / HTTP/1.1" 200 35791
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6588
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6588
+"GET / HTTP/1.1" 200 35792
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6588
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6588
+"GET / HTTP/1.1" 200 35791
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6588
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6588
+"GET / HTTP/1.1" 200 35791
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6588
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6588
+"GET /quiz/15/ HTTP/1.1" 200 61671
+"GET / HTTP/1.1" 200 35791
+"GET / HTTP/1.1" 200 35775
+"GET /quiz/15/ HTTP/1.1" 200 31672
+"GET /quiz/15/result/ HTTP/1.1" 200 34714
+"GET / HTTP/1.1" 200 35775
+"GET /quiz/15/ HTTP/1.1" 200 31672
+"GET / HTTP/1.1" 200 35775
+"GET / HTTP/1.1" 200 35738
+"GET / HTTP/1.1" 200 35739
+"GET / HTTP/1.1" 200 35739
+"GET / HTTP/1.1" 200 35738
+"GET / HTTP/1.1" 200 35821
+"GET / HTTP/1.1" 200 35671
+"GET / HTTP/1.1" 200 35729
+"GET / HTTP/1.1" 200 35729
+"GET / HTTP/1.1" 200 35698
+"GET / HTTP/1.1" 200 35698
+"GET / HTTP/1.1" 200 35858
+"GET /quiz/24/ HTTP/1.1" 200 31736
+"GET / HTTP/1.1" 200 35858
+"GET / HTTP/1.1" 200 35859
+"GET / HTTP/1.1" 200 36655
+"GET /quiz/20/ HTTP/1.1" 200 32546
+"GET / HTTP/1.1" 200 36410
+"GET /quiz/15/ HTTP/1.1" 200 32307
+"GET / HTTP/1.1" 200 36411
+"GET /quiz/15/ HTTP/1.1" 200 41396
+Watching for file changes with StatReloader
+Not Found: /api/chat
+"GET /api/chat HTTP/1.1" 404 6561
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6570
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /static/js/particles.js HTTP/1.1" 200 43009
+"GET /register/ HTTP/1.1" 200 33337
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 52243)
+"GET /register/ HTTP/1.1" 200 36142
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 52723)
+"GET /register/ HTTP/1.1" 200 36142
+"GET /register/ HTTP/1.1" 200 2420
+"GET /register/ HTTP/1.1" 200 2420
+"GET /register/ HTTP/1.1" 200 36051
+"GET /register/ HTTP/1.1" 200 2450
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 52745)
+"GET /register/ HTTP/1.1" 200 2450
+"GET /register/ HTTP/1.1" 200 36051
+"GET /register/ HTTP/1.1" 200 36448
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 52859)
+"GET /register/ HTTP/1.1" 200 36445
+"POST /register/ HTTP/1.1" 200 36732
+"POST /register/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 38137
+"GET /quiz/15/ HTTP/1.1" 200 64009
+"POST /quiz/15/ HTTP/1.1" 302 0
+"GET /quiz/15/result/ HTTP/1.1" 200 36752
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 52868)
+"GET / HTTP/1.1" 200 38137
+"GET /?q=test HTTP/1.1" 200 36079
+"GET /quiz/15/ HTTP/1.1" 200 64009
+"GET / HTTP/1.1" 200 38137
+"GET /quiz/15/ HTTP/1.1" 200 64009
+"POST /quiz/15/ HTTP/1.1" 302 0
+"GET /quiz/15/result/ HTTP/1.1" 200 37066
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 52877)
+"GET / HTTP/1.1" 200 38137
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 52882)
+"GET /quiz/15/ HTTP/1.1" 200 34027
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 52883)
+"GET /quiz/15/result/ HTTP/1.1" 200 37066
+"GET / HTTP/1.1" 200 38137
+"POST /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /login/ HTTP/1.1" 200 34534
+"GET /login/ HTTP/1.1" 200 34978
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 38131
+"GET /quiz/15/ HTTP/1.1" 200 43116
+"GET / HTTP/1.1" 200 38131
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 38131
+"POST /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /static/js/particles.js HTTP/1.1" 200 43009
+"GET /login/ HTTP/1.1" 200 34978
+"GET /login/ HTTP/1.1" 200 34995
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 38148
+"POST /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /register/ HTTP/1.1" 200 36462
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 50323)
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /login/ HTTP/1.1" 200 34995
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 50374)
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 38148

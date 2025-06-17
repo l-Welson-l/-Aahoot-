@@ -1,13 +1,40 @@
 {% extends 'home/main.html' %}
 {% block content %}
-<h1>Login</h1>
-<form method="post">
-    {% csrf_token %}
-    {{form}}
-    <button type="submit">Login</button>
-</form>
-<a>Don't have a accout?? <a href="{% url 'register' %}">Register</a></a>
+<div class="reg-wrapper">
+  <div class="reg-card">
+    <div class="reg-card-header">
+      <div class="text-header">Login</div>
+    </div>
+    <div class="reg-card-body">
+      <form method="post">
+        {% csrf_token %}
 
+        <div class="reg-form-group">
+          <label for="{{ form.username.id_for_label }}">Username:</label>
+          {{ form.username }}
+          {% if form.username.errors %}
+            <div class="form-error">{{ form.username.errors }}</div>
+          {% endif %}
+        </div>
+
+        <div class="reg-form-group">
+          <label for="{{ form.password.id_for_label }}">Password:</label>
+          {{ form.password }}
+          {% if form.password.errors %}
+            <div class="form-error">{{ form.password.errors }}</div>
+          {% endif %}
+        </div>
+
+        <input type="submit" class="reg-btn" value="Login">
+      </form>
+
+      <p style="margin-top: 10px; font-size: 14px;">
+        Don't have an account?
+        <a href="{% url 'register' %}" style="color: #1E90FF; text-decoration: underline;">Register</a>
+      </p>
+    </div>
+  </div>
+</div>
 
 
 {% endblock %}

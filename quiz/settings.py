@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-u+xa-5oh^^lykxe4ix%u+m#39_c+1a6l142n(fw=5rb3)q6dub
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.ngrok-free.app',
+]
 
 
 # Application definition
@@ -48,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'quiz.middleware.LogVisitorMiddleware',
 ]
 
 ROOT_URLCONF = 'quiz.urls'
@@ -99,6 +104,33 @@ AUTH_PASSWORD_VALIDATORS = [
     #     'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     # },
 ]
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'visitor_log.log',  # Log file name
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {message} {remote_addr}',
+            'style': '{',
+        },
+    },
+}
+
+
 
 
 # Internationalization

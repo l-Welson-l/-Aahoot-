@@ -120,9 +120,56 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            
         }
+       /* Mobile Adjustments (max-width: 768px) */
+@media (max-width: 374px) and (max-height: 528px) {
+    .quiz-container {
+        justify-content: center;
+        gap: 10px;  /* A bit more space between cards */
+        padding: 10px;  /* Slight padding around the container */
+    }
 
-        .quiz-card:hover {
+    .quiz-card {
+        width: 45%;  /* Smaller width to allow 2 cards per row */
+        height: 150px;  /* Adjust height for better fit */
+        padding: 10px;  /* Adjust padding for better content fitting */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Space between elements in the card */
+    }
+
+    /* Adjust card text for small screens */
+    .quiz-card h2 {
+        font-size: 1.1rem; /* Adjusted to fit within card */
+        margin-bottom: 5px; /* Space between title and content */
+    }
+
+    .quiz-card p {
+        font-size: 0.9rem; /* Adjust font size for better readability */
+        margin-bottom: 5px; /* Space between text and button */
+    }
+
+    .quiz-card .creator {
+        font-size: 0.8rem;
+        color: #ccc;
+    }
+
+    .quiz-card a {
+        font-size: 1rem;  /* Adjust size of link */
+        padding: 8px 10px; /* Button size */
+        text-align: center;
+        border-radius: 5px;
+    }
+    .quiz-container {
+        flex-direction: row;
+        justify-content: space-between; /* Ensure 2 cards per row with some space */
+    }
+}
+
+
+
+        .quiz-card:hover {  
             transform: translateY(-10px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
         }
@@ -273,9 +320,9 @@
 
         /* Content area styles */
         .content-container {
-            margin: 20px auto;
-            max-width: 1200px;
-            padding: 20px;
+            margin: 10px auto;
+            max-width: 1100px;
+            padding: 10px;
         }
 
         .sidebar.open {
@@ -1130,6 +1177,85 @@
         .create-answer-link:hover {
             color: #4682B4; /* Change color on hover */
         }
+
+
+        .reg-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            background-color: #333; /* Optional: light background for contrast */
+        }
+
+        .reg-card {
+        width: 350px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+        overflow: hidden;
+        margin: 10px;
+        }
+
+        .reg-card-header {
+        background-color: #333;
+        padding: 16px;
+        text-align: center;
+        }
+
+        .reg-card-header .text-header {
+        margin: 0;
+        font-size: 18px;
+        color: rgb(255, 255, 255);
+        }
+
+        .reg-card-body {
+        padding: 16px;
+        }
+
+        .reg-form-group {
+        margin-bottom: 10px;
+        }
+
+        .reg-form-group label {
+        display: block;
+        font-size: 14px;
+        color: rgb(255, 253, 253)efe;
+        font-weight: bold;
+        margin-bottom: 1px;
+        }
+
+        .reg-form-group input[type="text"],
+        .reg-form-group input[type="email"],
+        .reg-form-group input[type="password"] {
+        width: 100%;
+        padding: 8px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        }
+
+        .reg-btn {
+        padding: 12px 24px;
+        margin-left: 13px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        background-color: #333;
+        color: #fff;
+        text-transform: uppercase;
+        transition: background-color 0.2s ease-in-out;
+        cursor: pointer
+        }
+
+        .reg-btn:hover {
+        background-color: #ccc;
+        color: #333;
+        }
+
+
+
+
+
 
 
 /**/

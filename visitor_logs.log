@@ -1,0 +1,71 @@
+Watching for file changes with StatReloader
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6570
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /static/js/particles.js HTTP/1.1" 200 43009
+"GET /login/ HTTP/1.1" 200 31387
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET / HTTP/1.1" 200 34985
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6570
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6570
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /logged_out/ HTTP/1.1" 200 4920
+C:\Users\welson\Desktop\quiz_project\quiz\quiz\middleware.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /logged_out/ HTTP/1.1" 200 4920
+Watching for file changes with StatReloader
+"GET /logged_out/ HTTP/1.1" 200 4920
+
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /static/js/particles.js HTTP/1.1" 200 43009
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6570
+Invalid HTTP_HOST header: '4ceb-95-92-66-187.ngrok-free.app'. You may need to add '4ceb-95-92-66-187.ngrok-free.app' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '4ceb-95-92-66-187.ngrok-free.app'. You may need to add '4ceb-95-92-66-187.ngrok-free.app' to ALLOWED_HOSTS.
+Bad Request: /
+"GET / HTTP/1.1" 400 72484
+Invalid HTTP_HOST header: '4ceb-95-92-66-187.ngrok-free.app'. You may need to add '4ceb-95-92-66-187.ngrok-free.app' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '4ceb-95-92-66-187.ngrok-free.app'. You may need to add '4ceb-95-92-66-187.ngrok-free.app' to ALLOWED_HOSTS.
+Bad Request: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 400 72191
+C:\Users\welson\Desktop\quiz_project\quiz\quiz\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\quiz\settings.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /static/js/particles.js HTTP/1.1" 200 43009
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 6588
+"GET /logged_out/ HTTP/1.1" 200 4920
+C:\Users\welson\Desktop\quiz_project\quiz\quiz\settings.py changed, reloading.
