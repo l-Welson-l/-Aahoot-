@@ -642,3 +642,23 @@ Watching for file changes with StatReloader
 C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
 Watching for file changes with StatReloader
 "GET / HTTP/1.1" 200 38711
+"GET /search/users/ HTTP/1.1" 200 34513
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 51450)
+"GET /search/users/?q= HTTP/1.1" 200 34513
+"GET /search/users/?q=use HTTP/1.1" 200 35019
+"GET /search/users/?q=use HTTP/1.1" 200 35044
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 51452)
+"GET /search/users/?q=use HTTP/1.1" 200 35022
+"GET / HTTP/1.1" 200 38711
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 51473)
+"GET / HTTP/1.1" 200 38689
+"GET / HTTP/1.1" 200 38690
+"GET /search/users/ HTTP/1.1" 200 34517
+"GET / HTTP/1.1" 200 38690
+"GET /quiz/15/ HTTP/1.1" 200 34487
+"GET / HTTP/1.1" 200 38690
+"GET /search/users/ HTTP/1.1" 200 34517
+"GET /search/users/?q=user HTTP/1.1" 200 35024

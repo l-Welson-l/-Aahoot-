@@ -1,14 +1,40 @@
 {% extends 'home/main.html' %}
 {% block content %}
-<h1>{{ profile_user.username }}'s Quizzes</h1>
 
-{% for quiz in quizzes %}
-    <div class="quiz-card">
-        <h2><a href="{% url 'quiz' quiz.pk %}">{{ quiz.title }}</a></h2>
-        <p>Created on: {{ quiz.created_at|date:"M d, Y" }}</p>
-        <a href="{% url 'quiz' quiz.pk %}"><button class="take-quiz-btn">Take Quiz</button></a>
+    <div class="sidebar-toggle" onclick="toggleSidebar()">&#9776;</div>
+
+    <div class="sidebar">
+        <h3>Quizzes</h3>
+        <details>
+            <summary>Created Quizzes</summary>
+            <ul>
+                {% for quiz in created_quizzes %}
+                    <li>
+                        <a href="{% url 'quiz' quiz.id %}">{{ quiz.title }}</a>
+                    </li>
+                {% empty %}
+                    <li>No quizzes created yet.</li>
+                {% endfor %}
+            </ul>
+        </details>
     </div>
-{% empty %}
-    <p>This user has not created any quizzes.</p>
-{% endfor %}
+
+    <div class="content-container">
+        <div class="action-container">
+            <small>Viewing @{{ profile_user.username }}'s Quizzes</small>
+        </div>
+
+        <div class="quiz-container">
+            {% for quiz in quizzes %}
+                <div class="quiz-card">
+                    <h2><a href="{% url 'quiz' quiz.pk %}">{{ quiz.title }}</a></h2>
+                    <p>Created on: {{ quiz.created_at|date:"M d, Y" }}</p>
+                    <a href="{% url 'quiz' quiz.pk %}"><button class="take-quiz-btn">Take Quiz</button></a>
+                </div>
+            {% empty %}
+                <p>This user has not created any quizzes.</p>
+            {% endfor %}
+        </div>
+    </div>
+
 {% endblock %}
