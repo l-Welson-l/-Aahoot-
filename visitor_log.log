@@ -662,3 +662,346 @@ Not Found: /favicon.ico
 "GET / HTTP/1.1" 200 38690
 "GET /search/users/ HTTP/1.1" 200 34517
 "GET /search/users/?q=user HTTP/1.1" 200 35024
+"GET /profile/User1/ HTTP/1.1" 200 36030
+"GET /quiz/15/ HTTP/1.1" 200 34487
+"GET / HTTP/1.1" 200 38690
+"GET / HTTP/1.1" 200 38690
+"GET /search/users/ HTTP/1.1" 200 34517
+"GET /search/users/?q=user HTTP/1.1" 200 35024
+"GET /profile/User1/ HTTP/1.1" 200 36030
+"GET /profile/User1/ HTTP/1.1" 200 36590
+"GET /profile/User1/ HTTP/1.1" 200 36590
+"GET /profile/User1/ HTTP/1.1" 200 36841
+"GET /profile/User1/ HTTP/1.1" 200 36841
+"GET / HTTP/1.1" 200 38690
+"GET /search/users/ HTTP/1.1" 200 34517
+"GET /search/users/?q=user HTTP/1.1" 200 35024
+"GET /profile/User1/ HTTP/1.1" 200 36841
+"GET / HTTP/1.1" 200 38690
+"GET /search/users/ HTTP/1.1" 200 34517
+"GET /search/users/?q=user HTTP/1.1" 200 35024
+"GET /profile/User1/ HTTP/1.1" 200 36841
+"GET / HTTP/1.1" 200 38690
+"GET /search/users/ HTTP/1.1" 200 34517
+"GET /search/users/?q=user HTTP/1.1" 200 35024
+"GET /profile/User1/ HTTP/1.1" 200 36841
+"GET / HTTP/1.1" 200 38690
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 51495)
+"GET /search/users/ HTTP/1.1" 200 34517
+"GET /search/users/?q=user HTTP/1.1" 200 35024
+"GET /profile/User1/ HTTP/1.1" 200 36841
+"GET /profile/User1/ HTTP/1.1" 200 37200
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 51626)
+"GET / HTTP/1.1" 200 38690
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 51627)
+"GET /search/users/ HTTP/1.1" 200 34517
+"GET /search/users/?q=user HTTP/1.1" 200 35024
+"GET /profile/User1/ HTTP/1.1" 200 37200
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 51628)
+"GET / HTTP/1.1" 200 38690
+"GET /search/users/ HTTP/1.1" 200 34517
+"GET /search/users/?q=user2 HTTP/1.1" 200 34617
+"GET /profile/User2/ HTTP/1.1" 200 35235
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 51630)
+"GET /quiz/20/ HTTP/1.1" 200 35136
+"GET / HTTP/1.1" 200 38690
+"GET /search/users/ HTTP/1.1" 200 34517
+"GET /search/users/?q=user HTTP/1.1" 200 35024
+"GET /profile/User1/ HTTP/1.1" 200 37200
+"GET /profile/User1/ HTTP/1.1" 200 37142
+"GET / HTTP/1.1" 200 38690
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 51631)
+"GET /search/users/ HTTP/1.1" 200 34517
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 51637)
+"GET /search/users/ HTTP/1.1" 200 35402
+"GET /search/users/?q=use HTTP/1.1" 200 36552
+"GET /search/users/?q=users HTTP/1.1" 200 35451
+"GET /search/users/?q=user HTTP/1.1" 200 36553
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 51694)
+"GET /search/users/?q=a HTTP/1.1" 200 35668
+"GET /search/users/?q=user HTTP/1.1" 200 36553
+"GET /profile/User1/ HTTP/1.1" 200 37877
+"GET / HTTP/1.1" 200 39425
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 51696)
+"GET /search/users/ HTTP/1.1" 200 35402
+"GET /search/users/?q=user HTTP/1.1" 200 36553
+"GET /search/users/?q=user HTTP/1.1" 200 36526
+"GET /search/users/?q=user HTTP/1.1" 200 36526
+"GET / HTTP/1.1" 200 39425
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 51697)
+C:\Users\welson\Desktop\quiz_project\quiz\home\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\urls.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 41046
+"GET /inbox HTTP/1.1" 301 0
+"GET /inbox/ HTTP/1.1" 200 37176
+"GET /search/users/?q=user HTTP/1.1" 200 38147
+"GET /profile/User1/ HTTP/1.1" 200 39498
+"GET / HTTP/1.1" 200 41046
+"GET /inbox/ HTTP/1.1" 200 37176
+"GET /search/users/?q=user2 HTTP/1.1" 200 37254
+"GET /profile/User2/ HTTP/1.1" 200 37533
+"GET / HTTP/1.1" 200 41046
+"GET /search/users/ HTTP/1.1" 200 37023
+"GET /search/users/?q=user2 HTTP/1.1" 200 37254
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 51914)
+"GET /profile/User2/ HTTP/1.1" 200 37533
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 51915)
+"GET /quiz/20/ HTTP/1.1" 200 37492
+"GET / HTTP/1.1" 200 41046
+"GET /quiz/20/ HTTP/1.1" 200 37492
+"GET / HTTP/1.1" 200 41046
+"GET /quiz/15/ HTTP/1.1" 200 36843
+"GET / HTTP/1.1" 200 41046
+"POST /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /login/ HTTP/1.1" 200 37794
+"GET /register/ HTTP/1.1" 200 39261
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /login/ HTTP/1.1" 200 37794
+"POST /login/ HTTP/1.1" 200 37808
+"POST /login/ HTTP/1.1" 200 37808
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 41905
+"GET /inbox/ HTTP/1.1" 200 37176
+C:\Users\welson\Desktop\quiz_project\quiz\home\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /static/js/particles.js HTTP/1.1" 200 43009
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 7644
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /login/ HTTP/1.1" 200 37794
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 41905
+"GET /create-quiz/ HTTP/1.1" 200 37260
+"GET / HTTP/1.1" 200 41905
+"GET /quiz/15/ HTTP/1.1" 200 45932
+"GET / HTTP/1.1" 200 41905
+"GET / HTTP/1.1" 200 41905
+- Broken pipe from ('127.0.0.1', 55915)
+"GET /search/users/ HTTP/1.1" 200 37023
+"GET /search/users/?q=user2 HTTP/1.1" 200 37254
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 56993)
+"GET /profile/User2/ HTTP/1.1" 200 37533
+Internal Server Error: /profile/User2/
+Traceback (most recent call last):
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\welson\Desktop\quiz_project\quiz\home\views.py", line 63, in user_profile
+    return render(request, 'home/user_profile.html', {'profile_user': user, 'quizzes': quizzes})
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\base.py", line 969, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\welson\scoop\apps\python\current\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'start_conversation' not found. 'start_conversation' is not a valid view function or pattern name.
+"GET /profile/User2/ HTTP/1.1" 500 166460
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\urls.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/login/?next=/admin/base/user/ HTTP/1.1" 200 3694
+- Broken pipe from ('127.0.0.1', 57238)
+- Broken pipe from ('127.0.0.1', 57234)
+- Broken pipe from ('127.0.0.1', 57237)
+- Broken pipe from ('127.0.0.1', 57235)
+- Broken pipe from ('127.0.0.1', 57232)
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 57239)
+- Broken pipe from ('127.0.0.1', 57236)
+"GET /profile/User2/ HTTP/1.1" 200 37649
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 57240)
+"GET / HTTP/1.1" 200 41905
+"GET /search/users/ HTTP/1.1" 200 37023
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 57242)
+"GET /search/users/?q=User2 HTTP/1.1" 200 37254
+"GET /profile/User2/ HTTP/1.1" 200 37649
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 57244)
+"GET /start-conversation/User2/ HTTP/1.1" 302 0
+"GET /chat/User2/ HTTP/1.1" 200 37472
+"POST /chat/User2/ HTTP/1.1" 302 0
+"GET /chat/User2/ HTTP/1.1" 200 37633
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 57245)
+"GET / HTTP/1.1" 200 41905
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 57249)
+"GET /inbox/ HTTP/1.1" 200 37271
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 57253)
+"GET /chat/User2/ HTTP/1.1" 200 37633
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 57255)
+"GET / HTTP/1.1" 200 41905
+"POST /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /login/ HTTP/1.1" 200 37794
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 41905
+"GET /inbox/ HTTP/1.1" 200 37271
+"GET /chat/User2/ HTTP/1.1" 200 37633
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 57257)
+"GET / HTTP/1.1" 200 41905
+"GET /inbox/ HTTP/1.1" 200 37271
+"GET /chat/User2/ HTTP/1.1" 200 37633
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 57265)
+"GET / HTTP/1.1" 200 41905
+"GET /search/users/ HTTP/1.1" 200 37023
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 57266)
+"GET /search/users/?q=user1 HTTP/1.1" 200 37707
+"GET /profile/User1/ HTTP/1.1" 200 39511
+"GET / HTTP/1.1" 200 41905
+"POST /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /login/ HTTP/1.1" 200 37794
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 41046
+"GET /inbox/ HTTP/1.1" 200 37271
+"GET /chat/User1/ HTTP/1.1" 200 37637
+"GET /chat/User1/ HTTP/1.1" 200 38157
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 57764)
+"GET /chat/User1/ HTTP/1.1" 200 38157
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 57767)
+"GET / HTTP/1.1" 200 41566
+"GET /inbox/ HTTP/1.1" 200 37791
+"GET /chat/User1/ HTTP/1.1" 200 38157
+"POST /chat/User1/ HTTP/1.1" 302 0
+"GET /chat/User1/ HTTP/1.1" 200 38320
+"GET /search/users/?q=user HTTP/1.1" 200 38667
+"GET /profile/User3/ HTTP/1.1" 200 37960
+"GET /start-conversation/User3/ HTTP/1.1" 302 0
+"GET /chat/User3/ HTTP/1.1" 200 37992
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 57769)
+"POST /chat/User3/ HTTP/1.1" 302 0
+"GET /chat/User3/ HTTP/1.1" 200 38151
+"GET /inbox/ HTTP/1.1" 200 37946
+"GET /chat/User3/ HTTP/1.1" 200 38151
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 57775)
+"GET /chat/User1/ HTTP/1.1" 200 38320
+"POST /chat/User1/ HTTP/1.1" 302 0
+"GET /chat/User1/ HTTP/1.1" 200 38479
+"GET /inbox/ HTTP/1.1" 200 37942
+"GET /chat/User1/ HTTP/1.1" 200 38479
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader

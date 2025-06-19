@@ -20,4 +20,7 @@ urlpatterns = [
     path('logged_out/', views.logged_out, name='logged_out'),
     path('search/users/', views.user_search, name='user_search'),
     path('profile/<str:username>/', views.user_profile, name='user_profile'),
+    path('inbox/', views.inbox, name='inbox'),
+    path('chat/<str:username>/', views.chat_view, name='chat'),
+    path('start-conversation/<str:username>/', views.start_conversation, name='start_conversation'),
 ]

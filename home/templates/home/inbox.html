@@ -1,0 +1,24 @@
+{% extends 'home/main.html' %}
+{% block content %}
+<div class="message-layout">
+    <div class="message-sidebar">
+        <form method="get" action="{% url 'user_search' %}">
+            <input type="text" name="q" placeholder="Search users..." class="user-search" />
+        </form>
+        <h3>Chats</h3>
+        <ul class="chat-list">
+            {% for contact, last_message in contacts %}
+                <li>
+                    <a href="{% url 'chat' contact.username %}">@{{ contact.username }}</a><br>
+                    <small>{{ last_message.content|truncatechars:30 }}</small>
+                </li>
+            {% empty %}
+                <li>No conversations yet.</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="message-content">
+        <p>Select a user from the left to start chatting.</p>
+    </div>
+</div>
+{% endblock %}

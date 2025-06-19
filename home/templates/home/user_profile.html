@@ -22,6 +22,9 @@
     <div class="content-container">
         <div class="action-container">
             <small>Viewing @{{ profile_user.username }}'s Quizzes</small>
+            {% if user.is_authenticated and user != profile_user %}
+                <a href="{% url 'start_conversation' profile_user.username %}" class="message-btn">Send Message</a>
+            {% endif %}
         </div>
 
         <div class="quiz-container">

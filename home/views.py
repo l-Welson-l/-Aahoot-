@@ -11,9 +11,69 @@ from django.core.exceptions import PermissionDenied
 from django.views.generic.edit import FormView, UpdateView, CreateView, DeleteView
 from django.views.generic import DetailView, View, TemplateView
 from django.urls import reverse_lazy, reverse
-from .models import Quiz, Answer, UserAnswer, Question
+from .models import Quiz, Answer, UserAnswer, Question, Message
 from .forms import QuizForm, QuestionForm, AnswerForm
 from django.forms import modelformset_factory
+from django.db.models import Q
+
+@login_required
+def inbox(request):
+    user = request.user
+    messages = Message.objects.filter(Q(sender=user) | Q(receiver=user))
+    contacts = {}
+    for msg in messages:
+        contact = msg.receiver if msg.sender == user else msg.sender
+        if contact not in contacts or msg.timestamp > contacts[contact].timestamp:
+            contacts[contact] = msg
+    contacts = sorted(contacts.items(), key=lambda x: x[1].timestamp, reverse=True)
+
+    return render(request, 'home/inbox.html', {'contacts': contacts})
+
+
+@login_required
+def chat_view(request, username):
+    user = request.user
+    other_user = get_object_or_404(User, username=username)
+
+    # Get all messages involving the user
+    messages = Message.objects.filter(Q(sender=user) | Q(receiver=user))
+
+    # Prepare sidebar contacts (just like inbox)
+    contacts = {}
+    for msg in messages:
+        contact = msg.receiver if msg.sender == user else msg.sender
+        if contact not in contacts or msg.timestamp > contacts[contact].timestamp:
+            contacts[contact] = msg
+    contacts = sorted(contacts.items(), key=lambda x: x[1].timestamp, reverse=True)
+
+    # Get messages with selected user
+    conversation = messages.filter(
+        Q(sender=user, receiver=other_user) |
+        Q(sender=other_user, receiver=user)
+    ).order_by('timestamp')
+
+    if request.method == 'POST':
+        content = request.POST.get('content')
+        if content:
+            Message.objects.create(sender=user, receiver=other_user, content=content)
+            return redirect('chat', username=username)
+
+    return render(request, 'home/chat.html', {
+        'other_user': other_user,
+        'messages': conversation,
+        'contacts': contacts,  # include this
+    })
+
+
+
+@login_required
+def start_conversation(request, username):
+    recipient = get_object_or_404(User, username=username)
+    return redirect('chat', username=recipient.username)
+    
+
+
+
 
 def logged_out(request):
     if request.user.is_authenticated:

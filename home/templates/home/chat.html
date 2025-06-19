@@ -1,0 +1,45 @@
+{% extends 'home/main.html' %}
+{% block content %}
+<div class="message-layout">
+    <div class="message-sidebar">
+        <form method="get" action="{% url 'user_search' %}">
+            <input type="text" name="q" placeholder="Search users..." class="user-search" />
+        </form>
+        <h3>Chats</h3>
+        <ul class="chat-list">
+            {% for contact, last_message in contacts %}
+                <li {% if contact == other_user %}style="background: #444;"{% endif %}>
+                    <a href="{% url 'chat' contact.username %}">@{{ contact.username }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="message-content">
+        <h2>@{{ other_user.username }}</h2>
+        <div class="chat-box">
+            {% for message in messages %}
+                <div class="message {% if message.sender == user %}sent{% else %}received{% endif %}">
+                    <p>{{ message.content }}</p>
+                    <small>{{ message.timestamp|date:"M d, H:i" }}</small>
+                </div>
+            {% endfor %}
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            <textarea name="content" placeholder="Type your message..." required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</div>
+
+
+<script>
+    const chatBox = document.querySelector('.chat-box');
+    if (chatBox) {
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+</script>
+
+
+{% endblock %}
