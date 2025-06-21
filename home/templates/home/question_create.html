@@ -8,11 +8,9 @@
 <form class="question-create-form" method="post">
     {% csrf_token %}
     
-    <!-- Question Form -->
     <h3>Question</h3>
     {{ question_form.as_p }}
     
-    <!-- Answer Formset -->
     <h3>Answers</h3>
     {{ answer_formset.management_form }}
     {% for form in answer_formset %}

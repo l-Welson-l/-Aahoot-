@@ -3,15 +3,26 @@
 
 
 {% if user.is_authenticated %}
-    <h1>Create a question</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="Submit">
+  <h1>Create a question</h1>
+  <div class="c-form-container">
+    <form method="post" class="c-form">
+      {% csrf_token %}
+      {% for field in form %}
+        <div class="c-form-group">
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.errors %}
+            <small style="color: red;">{{ field.errors }}</small>
+          {% endif %}
+        </div>
+      {% endfor %}
+      <button type="submit" class="c-form-submit-btn">Submit</button>
     </form>
+  </div>
 {% else %}
-<a>You need to be logged in to create a quiz --<a href="{% url 'login' %}">Login</a></a>
+  <p>You need to be logged in to create a quiz — <a href="{% url 'login' %}">Login</a></p>
 {% endif %}
+
 
 
 

@@ -1005,3 +1005,85 @@ Not Found: /favicon.ico
 "GET /chat/User1/ HTTP/1.1" 200 38479
 C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
 Watching for file changes with StatReloader
+"GET /chat/User1/ HTTP/1.1" 200 38881
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 57931)
+"GET /chat/User3/ HTTP/1.1" 200 38553
+"GET /chat/User1/ HTTP/1.1" 200 38881
+"GET /chat/User3/ HTTP/1.1" 200 38553
+"POST /chat/User3/ HTTP/1.1" 302 0
+"GET /chat/User3/ HTTP/1.1" 200 38713
+"GET /chat/User1/ HTTP/1.1" 200 38881
+"POST /chat/User1/ HTTP/1.1" 302 0
+"GET /chat/User1/ HTTP/1.1" 200 39044
+"GET / HTTP/1.1" 200 41566
+"POST /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /login/ HTTP/1.1" 200 38314
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 42425
+"GET /search/users/ HTTP/1.1" 200 37543
+"GET /search/users/?q=user HTTP/1.1" 200 38667
+"GET /profile/User1/ HTTP/1.1" 200 40031
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 57937)
+"GET / HTTP/1.1" 200 42425
+"GET /search/users/ HTTP/1.1" 200 37543
+"GET /search/users/?q=User2 HTTP/1.1" 200 37774
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 57978)
+"GET /profile/User2/ HTTP/1.1" 200 38169
+"GET /inbox/ HTTP/1.1" 200 37793
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 57982)
+"GET /chat/User2/ HTTP/1.1" 200 38941
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 57983)
+"GET /chat/User2/ HTTP/1.1" 200 38927
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 58039)
+"GET / HTTP/1.1" 200 42425
+"GET / HTTP/1.1" 200 43177
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 58201)
+"GET / HTTP/1.1" 200 43206
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 58238)
+"GET / HTTP/1.1" 200 43177
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 58270)
+"GET / HTTP/1.1" 200 43148
+"GET / HTTP/1.1" 200 43177
+"GET / HTTP/1.1" 200 43218
+"GET / HTTP/1.1" 200 43219
+"GET / HTTP/1.1" 200 43218
+"GET /inbox/ HTTP/1.1" 200 38310
+"GET /chat/User2/ HTTP/1.1" 200 39444
+"GET / HTTP/1.1" 200 43218
+"GET /inbox/ HTTP/1.1" 200 38310
+"GET / HTTP/1.1" 200 43218
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 58276)
+"GET /inbox/ HTTP/1.1" 200 38310
+"GET / HTTP/1.1" 200 43218
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 43160
+"POST /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /logged_out/ HTTP/1.1" 200 4920
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader
