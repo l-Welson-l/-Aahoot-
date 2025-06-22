@@ -1087,3 +1087,366 @@ C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
 Watching for file changes with StatReloader
 C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
 Watching for file changes with StatReloader
+"GET /login/ HTTP/1.1" 200 38773
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 43160
+"GET /create-quiz/ HTTP/1.1" 200 38239
+"GET / HTTP/1.1" 200 43160
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 51164)
+"GET /quiz/15/ HTTP/1.1" 200 46911
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 51165)
+"GET /quiz/15/create-question HTTP/1.1" 200 39544
+"GET / HTTP/1.1" 200 43160
+"GET / HTTP/1.1" 200 45473
+"GET /create-quiz/ HTTP/1.1" 200 40730
+"POST /create-quiz/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 45957
+"GET /quiz/31/ HTTP/1.1" 200 41485
+"GET / HTTP/1.1" 200 45957
+"GET /create-quiz/ HTTP/1.1" 200 40730
+"GET /create-quiz/ HTTP/1.1" 200 40730
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 52610)
+"GET / HTTP/1.1" 200 45957
+"GET / HTTP/1.1" 200 45957
+"POST /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4920
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 52761)
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /logged_out/ HTTP/1.1" 200 4920
+"GET /login/ HTTP/1.1" 200 41086
+"GET /register/ HTTP/1.1" 200 41306
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4471
+"GET /login/ HTTP/1.1" 200 41086
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 45957
+"GET / HTTP/1.1" 200 46082
+"GET /search/users/ HTTP/1.1" 200 40315
+"GET / HTTP/1.1" 200 46082
+"GET / HTTP/1.1" 200 45999
+"GET / HTTP/1.1" 200 46141
+"GET /search/users/ HTTP/1.1" 200 40315
+"GET /search/users/?q=User HTTP/1.1" 200 41439
+"GET / HTTP/1.1" 200 46141
+"GET /search/users/ HTTP/1.1" 200 40315
+"GET /search/users/?q= HTTP/1.1" 200 40315
+"GET /search/users/?q= HTTP/1.1" 200 40315
+"GET /search/users/?q= HTTP/1.1" 200 40315
+"GET /search/users/?q=U HTTP/1.1" 200 41587
+"GET / HTTP/1.1" 200 46141
+"POST /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4471
+"GET /register/ HTTP/1.1" 200 41306
+"POST /register/ HTTP/1.1" 200 41530
+"POST /register/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 45097
+"GET /create-quiz/ HTTP/1.1" 200 40730
+"GET / HTTP/1.1" 200 45097
+"GET /quiz/31/ HTTP/1.1" 200 40830
+"GET / HTTP/1.1" 200 45097
+"GET /create-quiz/ HTTP/1.1" 200 40730
+"POST /create-quiz/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 45500
+"GET /inbox/ HTTP/1.1" 200 40468
+"GET / HTTP/1.1" 200 45500
+"GET /inbox/ HTTP/1.1" 200 40468
+"GET / HTTP/1.1" 200 45500
+"GET / HTTP/1.1" 200 45500
+"GET / HTTP/1.1" 200 45500
+"GET /create-quiz/ HTTP/1.1" 200 40730
+"POST /create-quiz/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 45969
+"GET /quiz/33/ HTTP/1.1" 200 40785
+"GET /quiz/33/create-question HTTP/1.1" 200 41829
+"GET / HTTP/1.1" 200 45969
+"GET /quiz/33/ HTTP/1.1" 200 40785
+"GET /quiz-update/33/ HTTP/1.1" 200 40531
+"POST /quiz-update/33/ HTTP/1.1" 302 0
+"GET /quiz/33/ HTTP/1.1" 200 40788
+"GET /quiz/33/create-question HTTP/1.1" 200 41829
+"GET /quiz/33/create-question HTTP/1.1" 200 41829
+"POST /quiz/33/create-question HTTP/1.1" 302 0
+"GET /quiz/33/ HTTP/1.1" 200 44582
+"GET / HTTP/1.1" 200 45969
+"POST /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4471
+"GET /login/ HTTP/1.1" 200 41086
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 46835
+"GET /quiz/22/ HTTP/1.1" 200 42540
+"POST /delete-quiz/22/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 46371
+"GET /quiz/24/ HTTP/1.1" 200 40771
+"POST /delete-quiz/24/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 45909
+"GET / HTTP/1.1" 200 45909
+"GET /quiz/26/ HTTP/1.1" 200 40784
+"POST /delete-quiz/26/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 45441
+"GET /quiz/27/ HTTP/1.1" 200 40782
+"POST /delete-quiz/27/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 44969
+"GET /quiz/28/ HTTP/1.1" 200 40770
+"POST /delete-quiz/28/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 44509
+"GET /quiz/29/ HTTP/1.1" 200 40772
+"POST /delete-quiz/29/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 44045
+"GET /quiz/25/ HTTP/1.1" 200 40777
+"POST /delete-quiz/25/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 43577
+"GET /quiz/31/ HTTP/1.1" 200 41485
+"POST /delete-quiz/31/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 43093
+"GET /quiz/32/ HTTP/1.1" 200 40820
+"GET / HTTP/1.1" 200 43093
+Watching for file changes with StatReloader
+"GET /quiz/33/ HTTP/1.1" 200 43025
+"GET / HTTP/1.1" 200 43093
+"POST /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4471
+"GET /login/ HTTP/1.1" 200 41086
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 43218
+"GET /quiz/33/ HTTP/1.1" 200 44582
+"GET /quiz/33/create-question HTTP/1.1" 200 41829
+"POST /quiz/33/create-question HTTP/1.1" 302 0
+"GET /quiz/33/ HTTP/1.1" 200 48326
+"GET /quiz/33/create-question HTTP/1.1" 200 41829
+"POST /quiz/33/create-question HTTP/1.1" 302 0
+"GET /quiz/33/ HTTP/1.1" 200 51948
+"GET /33/answer-create/ HTTP/1.1" 200 40497
+"POST /33/answer-create/ HTTP/1.1" 302 0
+"GET /quiz/33/ HTTP/1.1" 200 52867
+"GET / HTTP/1.1" 200 43218
+"GET /quiz/33/ HTTP/1.1" 200 52867
+"GET / HTTP/1.1" 200 43218
+"POST /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4471
+"GET /login/ HTTP/1.1" 200 41086
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 43093
+"GET /quiz/33/ HTTP/1.1" 200 49325
+"POST /quiz/33/ HTTP/1.1" 302 0
+"GET /quiz/33/result/ HTTP/1.1" 200 41428
+"GET / HTTP/1.1" 200 43093
+"POST /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4471
+"GET /login/ HTTP/1.1" 200 41086
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 43218
+"GET /quiz/33/ HTTP/1.1" 200 52867
+"GET /quiz/33/participant-results/ HTTP/1.1" 200 42186
+"GET / HTTP/1.1" 200 43218
+"GET /quiz/33/ HTTP/1.1" 200 52867
+"POST /quiz/33/ HTTP/1.1" 302 0
+"GET /quiz/33/result/ HTTP/1.1" 200 41428
+"GET / HTTP/1.1" 200 43218
+"GET /quiz/33/ HTTP/1.1" 200 43675
+"GET /quiz/33/create-question HTTP/1.1" 200 41829
+"POST /quiz/33/create-question HTTP/1.1" 302 0
+"GET /quiz/33/ HTTP/1.1" 200 56623
+"GET /quiz/33/create-question HTTP/1.1" 200 41829
+"GET /quiz/33/create-question HTTP/1.1" 200 41829
+"POST /quiz/33/create-question HTTP/1.1" 302 0
+"GET /quiz/33/ HTTP/1.1" 200 60387
+"POST /quiz/33/ HTTP/1.1" 302 0
+"GET /quiz/33/result/ HTTP/1.1" 200 42251
+"GET / HTTP/1.1" 200 43218
+"GET /quiz/33/ HTTP/1.1" 200 45661
+"GET /quiz/33/participant-results/ HTTP/1.1" 200 45569
+"GET / HTTP/1.1" 200 43218
+"GET /quiz/33/ HTTP/1.1" 200 45661
+"GET /quiz/33/result/ HTTP/1.1" 200 42251
+"GET / HTTP/1.1" 200 43218
+"GET /quiz/33/ HTTP/1.1" 200 45661
+"GET /quiz/33/participant-results/ HTTP/1.1" 200 45569
+"GET / HTTP/1.1" 200 43218
+"GET /inbox/ HTTP/1.1" 200 40468
+"GET /search/users/?q=user HTTP/1.1" 200 41439
+"GET /profile/User1/ HTTP/1.1" 200 40941
+"GET /start-conversation/User1/ HTTP/1.1" 302 0
+"GET /chat/User1/ HTTP/1.1" 200 40905
+"POST /chat/User1/ HTTP/1.1" 302 0
+"GET /chat/User1/ HTTP/1.1" 200 41206
+"GET / HTTP/1.1" 200 43218
+"POST /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4471
+"GET /login/ HTTP/1.1" 200 41086
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 43093
+"GET /inbox/ HTTP/1.1" 200 40730
+"GET /chat/John_Doe/ HTTP/1.1" 200 41330
+"GET /chat/User2/ HTTP/1.1" 200 41816
+"GET /chat/John_Doe/ HTTP/1.1" 200 41330
+"GET / HTTP/1.1" 200 43093
+"GET / HTTP/1.1" 200 43093
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 50900)
+"GET /inbox/ HTTP/1.1" 200 40730
+"GET /chat/John_Doe/ HTTP/1.1" 200 41330
+"GET / HTTP/1.1" 200 43093
+- Broken pipe from ('127.0.0.1', 50923)
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 50927)
+"POST /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4471
+"GET /login/ HTTP/1.1" 200 41086
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 43218
+"GET /inbox/ HTTP/1.1" 200 40567
+"GET /chat/User1/ HTTP/1.1" 200 41206
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 50928)
+"POST /chat/User1/ HTTP/1.1" 302 0
+"GET /chat/User1/ HTTP/1.1" 200 41376
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 51016)
+"GET / HTTP/1.1" 200 43218
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 51018)
+"POST /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4471
+"GET /register/ HTTP/1.1" 200 41306
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 51021)
+"POST /register/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 43040
+"GET /inbox/ HTTP/1.1" 200 40468
+"GET /search/users/?q=John HTTP/1.1" 200 40551
+"GET /profile/John_Doe/ HTTP/1.1" 200 41227
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 51034)
+"GET /start-conversation/John_Doe/ HTTP/1.1" 302 0
+"GET /chat/John_Doe/ HTTP/1.1" 200 40908
+"POST /chat/John_Doe/ HTTP/1.1" 302 0
+"GET /chat/John_Doe/ HTTP/1.1" 200 41212
+"POST /chat/John_Doe/ HTTP/1.1" 302 0
+"GET /chat/John_Doe/ HTTP/1.1" 200 41404
+"GET / HTTP/1.1" 200 43040
+"POST /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4471
+"GET /login/ HTTP/1.1" 200 41086
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 43218
+"GET /inbox/ HTTP/1.1" 200 40760
+"GET /chat/Jane_Doe/ HTTP/1.1" 200 41523
+"POST /chat/Jane_Doe/ HTTP/1.1" 302 0
+"GET /chat/Jane_Doe/ HTTP/1.1" 200 41687
+"POST /chat/Jane_Doe/ HTTP/1.1" 302 0
+"GET /chat/Jane_Doe/ HTTP/1.1" 200 41863
+Watching for file changes with StatReloader
+"GET /admin HTTP/1.1" 301 0
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 3677
+"POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+"GET /admin/ HTTP/1.1" 200 5853
+"GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+"GET /admin/auth/user/ HTTP/1.1" 200 18178
+"GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+"GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+"GET /static/admin/js/core.js HTTP/1.1" 200 6208
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9097
+"GET /static/admin/js/filters.js HTTP/1.1" 200 978
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+"GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+"GET /static/admin/img/search.svg HTTP/1.1" 200 458
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+"GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+"GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+"GET /admin/auth/user/14/change/ HTTP/1.1" 200 22778
+"GET /static/admin/css/forms.css HTTP/1.1" 200 8794
+"GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+"GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+"GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15502
+"GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+"GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+"GET /static/admin/css/widgets.css HTTP/1.1" 200 11564
+"GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+"GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+"GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+"GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+"GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 200 655
+"GET /admin/auth/user/ HTTP/1.1" 200 18178
+"GET /admin/auth/user/11/change/ HTTP/1.1" 200 22790
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/user/ HTTP/1.1" 200 18178
+"GET /admin/auth/group/ HTTP/1.1" 200 7487
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/user/ HTTP/1.1" 200 18178
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/auth/user/ HTTP/1.1" 302 0
+"GET /admin/auth/user/ HTTP/1.1" 200 18371
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/img/icon-alert.svg HTTP/1.1" 200 504
+"GET /admin/auth/user/?is_active__exact=0 HTTP/1.1" 200 9712
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/user/?is_active__exact=1 HTTP/1.1" 200 19372
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/user/? HTTP/1.1" 200 18178
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/user/15/change/ HTTP/1.1" 200 22810
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/user/? HTTP/1.1" 200 18178
+"GET /admin/auth/user/12/change/ HTTP/1.1" 200 22790
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/user/? HTTP/1.1" 200 18178
+"GET / HTTP/1.1" 200 43038
+"POST /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4471
+"GET /register/ HTTP/1.1" 200 41306
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4471
+"GET /login/ HTTP/1.1" 200 41086
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 43218
+C:\Users\welson\Desktop\quiz_project\quiz\home\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /inbox/ HTTP/1.1" 200 40748
+"GET /chat/Jane_Doe/ HTTP/1.1" 200 41863
+"GET / HTTP/1.1" 200 43218
+"GET /quiz/33/ HTTP/1.1" 200 45661
+"GET / HTTP/1.1" 200 43218
+"GET /quiz/15/ HTTP/1.1" 200 70117
+"GET / HTTP/1.1" 200 43218
+"GET /quiz/32/ HTTP/1.1" 200 41475
+"GET / HTTP/1.1" 200 43218
+"POST /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4471
+"GET /login/ HTTP/1.1" 200 41086
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 43040
+"GET /quiz/33/ HTTP/1.1" 200 54859
+C:\Users\welson\Desktop\quiz_project\quiz\home\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\welson\Desktop\quiz_project\quiz\home\admin.py changed, reloading.
+Watching for file changes with StatReloader

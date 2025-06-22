@@ -349,9 +349,6 @@ class QuizResultView(TemplateView):
 
         return context
 
-
-
-
 class QuizParticipantResultsView(DetailView):
     model = Quiz
     template_name = 'home/quiz_participant_results.html'

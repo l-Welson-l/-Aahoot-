@@ -9,14 +9,12 @@
         <form method="post">
         {% csrf_token %}
 
-        <!-- Show form-wide (non-field) errors -->
         {% if form.non_field_errors %}
             <div class="form-error">
             {{ form.non_field_errors }}
             </div>
         {% endif %}
 
-        <!-- Username -->
         <div class="reg-form-group">
             <label for="{{ form.username.id_for_label }}">Username:</label>
             {{ form.username }}
@@ -25,7 +23,6 @@
             {% endif %}
         </div>
         
-        <!-- Password1 -->
         <div class="reg-form-group">
             <label for="{{ form.password1.id_for_label }}">Password:</label>
             {{ form.password1 }}
@@ -34,7 +31,6 @@
             {% endif %}
         </div>
 
-        <!-- Password2 -->
         <div class="reg-form-group">
             <label for="{{ form.password2.id_for_label }}">Confirm Password:</label>
             {{ form.password2 }}
@@ -49,12 +45,6 @@
     </div>
     </div>
 </div>
-
-<!-- <form method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Register"/>
-</form> -->
 
 
 {% endblock %}

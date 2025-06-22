@@ -16,7 +16,17 @@
                     <li>No quizzes created yet.</li>
                 {% endfor %}
             </ul>
+            
         </details>
+        <details>
+            <summary>Users</summary>
+            <ul>
+                <li>
+                    <a href="{% url 'user_search' %}">Search Users</a>
+                </li>
+            </ul>
+        </details>
+        
     </div>
     <a href="{% url 'inbox' %}" class="inbox-icon" title="Inbox">
     <img src="https://cdn.iconscout.com/icon/free/png-256/free-email-icon-download-in-svg-png-gif-file-formats--envelope-inbox-letter-ikooni-basic-pack-miscellaneous-icons-27586.png?f=webp&w=256" alt="Inbox" />
@@ -40,7 +50,7 @@
                     <input class="input" type="text" name="q" value="{{ search_query }}" placeholder="Search...."/>
                 </label>
             </form>
-            <a href="{% url 'user_search' %}" class="user-link">Users</a>
+            
         </div>
         <div class="quiz-container">
             {% for quiz in home %}

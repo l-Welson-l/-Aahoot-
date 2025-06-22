@@ -8,7 +8,7 @@
     <title>Login Required - AAhoot Quiz App</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* General reset */
+     
         * {
             margin: 0;
             padding: 0;
@@ -21,9 +21,8 @@
             color: white;
         }
 
-        /* Gradient background animation */
         .gradient-container {
-            position: fixed; /* Ensures it covers the full viewport */
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -34,7 +33,6 @@
             overflow: hidden;
         }
 
-        /* Main content styling */
         .content {
             text-align: center;
             z-index: 1;
@@ -47,7 +45,7 @@
             font-size: 4rem;
             margin-bottom: 20px;
             font-weight: 700;
-            color: #FF6347; /* Soft red to make it pop */
+            color: #FF6347; 
         }
 
         .content p {
@@ -67,10 +65,9 @@
             color: #FFD700;
         }
 
-        /* Footer styling */
         footer {
             position: absolute;
-            bottom: 20px; /* 20px from the bottom */
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 2;
@@ -79,17 +76,16 @@
         }
 
         .github-logo {
-            width: 30px; /* Adjust size */
+            width: 30px; 
             height: 30px;
             margin-top: 10px;
             transition: transform 0.3s ease;
         }
 
         .github-logo:hover {
-            transform: scale(1.2); /* Slight zoom effect on hover */
+            transform: scale(1.2); 
         }
 
-        /* Particle container */
         #particles-js {
             position: absolute;
             top: 0;
@@ -103,10 +99,8 @@
 </head>
 <body>
     <div class="gradient-container">
-        <!-- Particles background -->
         <div id="particles-js"></div>
 
-        <!-- Main content -->
         <div class="content">
             <h1>AAhoot</h1>
             <p>Please log in to view the quizzes.</p>
@@ -115,14 +109,12 @@
         </div>
     </div>
 
-    <!-- Footer with GitHub logo -->
     <footer>
         <a href="https://github.com/l-Welson-l" target="_blank">
             <img class="github-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">
         </a>
     </footer>
 
-    <!-- Particles.js script -->
     <script src="{% static 'js/particles.js' %}"></script>
     <script>
         particlesJS('particles-js', {
