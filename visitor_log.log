@@ -1450,3 +1450,117 @@ C:\Users\welson\Desktop\quiz_project\quiz\home\admin.py changed, reloading.
 Watching for file changes with StatReloader
 C:\Users\welson\Desktop\quiz_project\quiz\home\admin.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 43040
+"GET /admin/auth/user/? HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/auth/user/ HTTP/1.1" 200 3697
+"POST /admin/login/?next=/admin/auth/user/ HTTP/1.1" 302 0
+"GET /admin/auth/user/ HTTP/1.1" 200 20044
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/home/message/ HTTP/1.1" 200 16702
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/home/message/12/change/ HTTP/1.1" 200 14645
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/home/question/ HTTP/1.1" 200 15185
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/home/quiz/ HTTP/1.1" 200 13251
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/home/question/ HTTP/1.1" 200 15185
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/home/quiz/ HTTP/1.1" 200 13251
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/user/ HTTP/1.1" 200 20044
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /quiz/33/ HTTP/1.1" 200 54859
+"GET / HTTP/1.1" 200 43038
+"GET /inbox/ HTTP/1.1" 200 40468
+"GET / HTTP/1.1" 200 43038
+"POST /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4471
+"GET /login/ HTTP/1.1" 200 41086
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 43040
+"GET /inbox/ HTTP/1.1" 200 40584
+"GET /chat/John_Doe/ HTTP/1.1" 200 41752
+"GET / HTTP/1.1" 200 43040
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 7944
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4471
+"GET /static/js/particles.js HTTP/1.1" 200 43009
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4471
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4471
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4471
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 7944
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4471
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4471
+"GET /static/js/particles.js HTTP/1.1" 200 43009
+"GET /login/ HTTP/1.1" 200 41086
+"GET /logged_out/ HTTP/1.1" 200 4471
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4471
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 7944
+"GET / HTTP/1.1" 200 43093
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 7944
+"GET / HTTP/1.1" 200 43093
+"POST /logout/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4471
+"GET /static/js/particles.js HTTP/1.1" 200 43009
+"GET /login/ HTTP/1.1" 200 41086
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 43218
+"GET /quiz/15/ HTTP/1.1" 200 70117
+"GET / HTTP/1.1" 200 43218
+"GET /create-quiz/ HTTP/1.1" 200 40730
+"GET / HTTP/1.1" 200 43218
+"GET /?q=test HTTP/1.1" 200 42004
+"GET /?q= HTTP/1.1" 200 43218
+"GET /quiz/33/ HTTP/1.1" 200 45661
+"GET / HTTP/1.1" 200 43218
+"GET /quiz/33/ HTTP/1.1" 200 45661
+"GET /quiz/33/participant-results/ HTTP/1.1" 200 45569
+"GET / HTTP/1.1" 200 43218
+"GET /quiz/33/ HTTP/1.1" 200 45661
+"GET /quiz/33/result/ HTTP/1.1" 200 42251
+"GET / HTTP/1.1" 200 43218
+"GET /search/users/ HTTP/1.1" 200 40315
+"GET /search/users/?q=User HTTP/1.1" 200 41439
+"GET /profile/User1/ HTTP/1.1" 200 40941
+"GET /start-conversation/User1/ HTTP/1.1" 302 0
+"GET /chat/User1/ HTTP/1.1" 200 41493
+"POST /chat/User1/ HTTP/1.1" 302 0
+"GET /chat/User1/ HTTP/1.1" 200 41655
+"GET /chat/User1/ HTTP/1.1" 200 41655
+"GET / HTTP/1.1" 200 43218
+"GET /inbox/ HTTP/1.1" 200 40740
+"GET / HTTP/1.1" 200 43218
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4471
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 7944
+"GET /logged_out/ HTTP/1.1" 200 4471
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4471
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 7944
+"GET /logged_out/ HTTP/1.1" 200 4471
+"GET / HTTP/1.1" 302 0
+"GET /logged_out/ HTTP/1.1" 200 4471
+"GET /admin HTTP/1.1" 301 0
+"GET /logged_out/ HTTP/1.1" 200 4471
+"GET /login/ HTTP/1.1" 200 41086
+"POST /login/ HTTP/1.1" 302 0
+"GET / HTTP/1.1" 200 43093
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 7944
+"GET / HTTP/1.1" 200 43218
